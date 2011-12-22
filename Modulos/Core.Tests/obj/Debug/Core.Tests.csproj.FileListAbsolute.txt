@@ -1,0 +1,15 @@
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\bin\Debug\Core.Tests.dll.config
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\bin\Debug\Core.Tests.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\bin\Debug\Core.Tests.pdb
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\bin\Debug\nunit.framework.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\bin\Debug\Swarm.Core.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\bin\Debug\Swarm.Persistencia.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\bin\Debug\Swarm.Utilitarios.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\bin\Debug\MySql.Data.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\bin\Debug\Swarm.Utilitarios.pdb
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\bin\Debug\Swarm.Persistencia.pdb
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\bin\Debug\Swarm.Core.pdb
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\bin\Debug\nunit.framework.xml
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\obj\Debug\ResolveAssemblyReference.cache
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\obj\Debug\Core.Tests.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Core.Tests\obj\Debug\Core.Tests.pdb

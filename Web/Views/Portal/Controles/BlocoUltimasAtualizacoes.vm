@@ -1,0 +1,10 @@
+﻿<h2 style="margin-bottom: 6px;">
+    <img class="Vertical_FundoConteudo" src="./_content/Images/Icones/p_atualizacao.png"
+        alt="" />&nbsp;&Uacute;ltimas atualiza&ccedil;&otilde;es</h2>
+<div class="Dimensao_LarguraPadrao" style="padding-left: 5px;">
+    #foreach($item in $this.GetVersoes)
+    <div>
+        <img class="Vertical_Centro" src="./_content/Images/Icones/p_indicador.png" alt=">>" />&nbsp;Vers&atilde;o $item.Versao - instalada em $this.GetDataHora($item.Log).
+    </div>
+    #end
+</div>

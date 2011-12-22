@@ -1,0 +1,14 @@
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\bin\Swarm.Persistencia.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\bin\Swarm.Persistencia.pdb
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\bin\Swarm.Utilitarios.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\bin\Swarm.Utilitarios.pdb
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\obj\Debug\ResolveAssemblyReference.cache
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\obj\Debug\Swarm.Persistencia.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\obj\Debug\Swarm.Persistencia.pdb
+D:\Software\Swarm\Web.Framework\Modulos\Persistencia\bin\Swarm.Persistencia.dll
+D:\Software\Swarm\Web.Framework\Modulos\Persistencia\bin\Swarm.Persistencia.pdb
+D:\Software\Swarm\Web.Framework\Modulos\Persistencia\bin\Swarm.Utilitarios.dll
+D:\Software\Swarm\Web.Framework\Modulos\Persistencia\bin\Swarm.Utilitarios.pdb
+D:\Software\Swarm\Web.Framework\Modulos\Persistencia\obj\Debug\ResolveAssemblyReference.cache
+D:\Software\Swarm\Web.Framework\Modulos\Persistencia\obj\Debug\Swarm.Persistencia.dll
+D:\Software\Swarm\Web.Framework\Modulos\Persistencia\obj\Debug\Swarm.Persistencia.pdb

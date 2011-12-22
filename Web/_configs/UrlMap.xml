@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<UrlMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ItensMapeados>
+    <item id="0" key="Handler" url="./Handler.aspx" titulo=":: Swarm Web Framework ::" ocultar="true" />
+    <item id="1" key="ShowMessage" url="./ShowMessage.aspx" titulo=":: Swarm Web Framework ::" ocultar="true" />
+    <item id="2" key="Default" url="./Default.aspx" titulo=":: Swarm Web Framework ::" ocultar="true" />
+
+    <item id="3" key="LoginPage" url="./Paginas/Login.aspx" titulo=":: Swarm Web Framework ::" />
+    <item id="4" key="LogoffPage" url="./Paginas/Logoff.aspx" titulo=":: Swarm Web Framework ::" />
+    <item id="5" key="ExpiredPage" url="./Paginas/Expired.aspx" titulo=":: Swarm Web Framework ::" />
+    
+    <item id="6" key="HomePortal" url="./Paginas/Ambientes/Portal/Home.aspx" titulo=":: Swarm Web Framework ::" />
+    <item id="7" key="VisualizarControlesdeAcesso" url="./Paginas/Ambientes/Portal/VisualizarControlesdeAcesso.aspx" titulo=":: Swarm Web Framework ::" />
+  </ItensMapeados>
+</UrlMap>

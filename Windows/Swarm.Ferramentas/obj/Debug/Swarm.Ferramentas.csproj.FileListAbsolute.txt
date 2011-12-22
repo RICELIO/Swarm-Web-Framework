@@ -1,0 +1,16 @@
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\bin\Debug\Swarm.Ferramentas.exe
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\bin\Debug\Swarm.Ferramentas.pdb
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\obj\Debug\ResolveAssemblyReference.cache
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\obj\Debug\Swarm.Ferramentas.wPrincipal.resources
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\obj\Debug\Swarm.Ferramentas.Properties.Resources.resources
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\obj\Debug\Swarm.Ferramentas.csproj.GenerateResource.Cache
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\obj\Debug\Swarm.Ferramentas.exe
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\obj\Debug\Swarm.Ferramentas.pdb
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\bin\Debug\Swarm.Ferramentas.exe.config
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\bin\Debug\Swarm.Core.dll
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\bin\Debug\Swarm.Persistencia.dll
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\bin\Debug\Swarm.Utilitarios.dll
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\bin\Debug\MySql.Data.dll
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\bin\Debug\Swarm.Utilitarios.pdb
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\bin\Debug\Swarm.Persistencia.pdb
+D:\Software\Swarm\Web.Framework\Windows\Swarm.Ferramentas\bin\Debug\Swarm.Core.pdb

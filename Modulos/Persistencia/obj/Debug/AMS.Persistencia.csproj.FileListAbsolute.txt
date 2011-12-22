@@ -1,0 +1,14 @@
+D:\Servicos\Web.Framework\Modulos\Persistencia\obj\Debug\ResolveAssemblyReference.cache
+D:\Servicos\Web.Framework\Modulos\Persistencia\bin\AMS.Persistencia.dll
+D:\Servicos\Web.Framework\Modulos\Persistencia\bin\AMS.Persistencia.pdb
+D:\Servicos\Web.Framework\Modulos\Persistencia\bin\AMS.Utilitarios.dll
+D:\Servicos\Web.Framework\Modulos\Persistencia\bin\AMS.Utilitarios.pdb
+D:\Servicos\Web.Framework\Modulos\Persistencia\obj\Debug\AMS.Persistencia.dll
+D:\Servicos\Web.Framework\Modulos\Persistencia\obj\Debug\AMS.Persistencia.pdb
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\bin\AMS.Persistencia.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\bin\AMS.Persistencia.pdb
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\bin\AMS.Utilitarios.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\bin\AMS.Utilitarios.pdb
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\obj\Debug\ResolveAssemblyReference.cache
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\obj\Debug\AMS.Persistencia.dll
+E:\Profissional\Projetos\Web.Framework\Modulos\Persistencia\obj\Debug\AMS.Persistencia.pdb

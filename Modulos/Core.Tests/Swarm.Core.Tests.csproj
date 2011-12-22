@@ -1,0 +1,84 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39898B0F-CC86-4DB3-B01D-98BA3FFCBA0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Swarm.Tests.Core</RootNamespace>
+    <AssemblyName>Swarm.Core.Tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Library\Seguranca\Autenticacao\UsuarioTest.cs" />
+    <Compile Include="Library\Seguranca\GrupoTest.cs" />
+    <Compile Include="Library\Seguranca\GrupoUsuarioTest.cs" />
+    <Compile Include="PrepararAmbienteDefaultTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\ControledeAcesso\AcessoTest.cs" />
+    <Compile Include="Web\FrontController\Common\CallBackPageFacadeTest.cs" />
+    <Compile Include="Web\FrontController\Common\AnonymousPageFacadeTest.cs" />
+    <Compile Include="Web\FrontController\Common\HomePageFacadeTest.cs" />
+    <Compile Include="Web\FrontController\Common\MappedPageFacadeTest.cs" />
+    <Compile Include="Web\FrontController\UrlMapTest.cs" />
+    <Compile Include="Web\PermissaoTest.cs" />
+    <Compile Include="Web\_configuracao\ConfiguracoesGeraisTest.cs" />
+    <Compile Include="Web\_configuracao\ControledeVersaoTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Swarm.Core.csproj">
+      <Project>{4D848C68-9566-4303-901F-7C8AEDBCA978}</Project>
+      <Name>Swarm.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistencia\Swarm.Persistencia.csproj">
+      <Project>{F2276397-C7B3-4512-9FAA-666FE6904A26}</Project>
+      <Name>Swarm.Persistencia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilitarios\Swarm.Utilitarios.csproj">
+      <Project>{D9EBFAA1-94FC-4B32-8D52-2557EF4322B3}</Project>
+      <Name>Swarm.Utilitarios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,14 @@
+﻿<div>
+    Por favor, selecione um dos ambientes abaixo para prosseguir. Caso queira efetuar
+    a troca de ambiente posteriormente ser&aacute; necess&aacute;rio efetuar uma nova
+    autentica&ccedil;&atilde;o.
+</div>
+<div style="margin-top: 15px;">
+    #foreach($item in $this.GetAmbientes)
+    <div class="Horizontal_Centro">
+        <a href="$this.GetDefinirAmbienteURI($item.GUID)">
+            <img class="Vertical_FundoConteudo" src="./_content/Images/Icones/p_ir.png" alt=">>"
+                style="border: none;" />&nbsp;$item.Titulo</a>
+    </div>
+    #end
+</div>

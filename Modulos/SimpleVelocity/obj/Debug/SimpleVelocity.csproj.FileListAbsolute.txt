@@ -1,0 +1,10 @@
+D:\Software\SimpleVelocity\Kernel\bin\SimpleVelocity.dll
+D:\Software\SimpleVelocity\Kernel\bin\SimpleVelocity.pdb
+D:\Software\SimpleVelocity\Kernel\obj\Debug\ResolveAssemblyReference.cache
+D:\Software\SimpleVelocity\Kernel\obj\Debug\SimpleVelocity.dll
+D:\Software\SimpleVelocity\Kernel\obj\Debug\SimpleVelocity.pdb
+D:\Software\Swarm\Web.Framework\Modulos\SimpleVelocity\bin\SimpleVelocity.dll
+D:\Software\Swarm\Web.Framework\Modulos\SimpleVelocity\bin\SimpleVelocity.pdb
+D:\Software\Swarm\Web.Framework\Modulos\SimpleVelocity\obj\Debug\ResolveAssemblyReference.cache
+D:\Software\Swarm\Web.Framework\Modulos\SimpleVelocity\obj\Debug\SimpleVelocity.dll
+D:\Software\Swarm\Web.Framework\Modulos\SimpleVelocity\obj\Debug\SimpleVelocity.pdb

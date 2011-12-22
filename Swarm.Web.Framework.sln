@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Geral", "Geral", "{9942CD43-618C-4399-934B-592033C81AE4}"
+	ProjectSection(SolutionItems) = preProject
+		Geral\SQLSERVER - Startup.sql = Geral\SQLSERVER - Startup.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Módulos", "Módulos", "{4703723C-23A8-4EAE-84F0-E01697383AD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swarm.Utilitarios", "Modulos\Utilitarios\Swarm.Utilitarios.csproj", "{D9EBFAA1-94FC-4B32-8D52-2557EF4322B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swarm.Persistencia", "Modulos\Persistencia\Swarm.Persistencia.csproj", "{F2276397-C7B3-4512-9FAA-666FE6904A26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swarm.Core", "Modulos\Core\Swarm.Core.csproj", "{4D848C68-9566-4303-901F-7C8AEDBCA978}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web", "Web\", "{BBCC8040-331E-42D7-9AA0-11A2343D6DE7}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		ProjectReferences = "{4D848C68-9566-4303-901F-7C8AEDBCA978}|Swarm.Core.dll;{F2276397-C7B3-4512-9FAA-666FE6904A26}|Swarm.Persistencia.dll;{D9EBFAA1-94FC-4B32-8D52-2557EF4322B3}|Swarm.Utilitarios.dll;{1528E4BC-50A9-4793-8B54-007559C89E09}|SimpleVelocity.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/Web"
+		Debug.AspNetCompiler.PhysicalPath = "Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Web"
+		Release.AspNetCompiler.PhysicalPath = "Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55749"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{C28DB09A-4DDA-4986-BC52-51D288BD0E5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swarm.Core.Tests", "Modulos\Core.Tests\Swarm.Core.Tests.csproj", "{39898B0F-CC86-4DB3-B01D-98BA3FFCBA0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleVelocity", "Modulos\SimpleVelocity\SimpleVelocity.csproj", "{1528E4BC-50A9-4793-8B54-007559C89E09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{D4C57BC7-0BA1-47E5-B556-50ACEDDE927F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swarm.Ferramentas", "Windows\Swarm.Ferramentas\Swarm.Ferramentas.csproj", "{D52045FF-217D-432B-B551-62C4FC2D3642}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9EBFAA1-94FC-4B32-8D52-2557EF4322B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9EBFAA1-94FC-4B32-8D52-2557EF4322B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9EBFAA1-94FC-4B32-8D52-2557EF4322B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9EBFAA1-94FC-4B32-8D52-2557EF4322B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2276397-C7B3-4512-9FAA-666FE6904A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2276397-C7B3-4512-9FAA-666FE6904A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2276397-C7B3-4512-9FAA-666FE6904A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2276397-C7B3-4512-9FAA-666FE6904A26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D848C68-9566-4303-901F-7C8AEDBCA978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D848C68-9566-4303-901F-7C8AEDBCA978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D848C68-9566-4303-901F-7C8AEDBCA978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D848C68-9566-4303-901F-7C8AEDBCA978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBCC8040-331E-42D7-9AA0-11A2343D6DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBCC8040-331E-42D7-9AA0-11A2343D6DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBCC8040-331E-42D7-9AA0-11A2343D6DE7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBCC8040-331E-42D7-9AA0-11A2343D6DE7}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{39898B0F-CC86-4DB3-B01D-98BA3FFCBA0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39898B0F-CC86-4DB3-B01D-98BA3FFCBA0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39898B0F-CC86-4DB3-B01D-98BA3FFCBA0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39898B0F-CC86-4DB3-B01D-98BA3FFCBA0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1528E4BC-50A9-4793-8B54-007559C89E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1528E4BC-50A9-4793-8B54-007559C89E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1528E4BC-50A9-4793-8B54-007559C89E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1528E4BC-50A9-4793-8B54-007559C89E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52045FF-217D-432B-B551-62C4FC2D3642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52045FF-217D-432B-B551-62C4FC2D3642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52045FF-217D-432B-B551-62C4FC2D3642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52045FF-217D-432B-B551-62C4FC2D3642}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D9EBFAA1-94FC-4B32-8D52-2557EF4322B3} = {4703723C-23A8-4EAE-84F0-E01697383AD7}
+		{F2276397-C7B3-4512-9FAA-666FE6904A26} = {4703723C-23A8-4EAE-84F0-E01697383AD7}
+		{4D848C68-9566-4303-901F-7C8AEDBCA978} = {4703723C-23A8-4EAE-84F0-E01697383AD7}
+		{39898B0F-CC86-4DB3-B01D-98BA3FFCBA0B} = {4703723C-23A8-4EAE-84F0-E01697383AD7}
+		{1528E4BC-50A9-4793-8B54-007559C89E09} = {4703723C-23A8-4EAE-84F0-E01697383AD7}
+		{BBCC8040-331E-42D7-9AA0-11A2343D6DE7} = {C28DB09A-4DDA-4986-BC52-51D288BD0E5E}
+		{D52045FF-217D-432B-B551-62C4FC2D3642} = {D4C57BC7-0BA1-47E5-B556-50ACEDDE927F}
+	EndGlobalSection
+EndGlobal
