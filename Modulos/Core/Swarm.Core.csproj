@@ -53,6 +53,7 @@
     <Compile Include="Library\Seguranca\Autenticacao\_EnumAutenticacao.cs" />
     <Compile Include="Library\Seguranca\Autenticacao\Excessões\UsuarioBloqueadoException.cs" />
     <Compile Include="Library\Seguranca\Criptografia\CriptografiaWEB.cs" />
+    <Compile Include="Web\ControledeAcesso\AcessoMapForm.cs" />
     <Compile Include="Web\UsuarioCorrenteFacade.cs" />
     <Compile Include="Library\Seguranca\Autenticacao\UsuarioCorrenteSingleton.cs" />
     <Compile Include="Library\Seguranca\Autenticacao\Excessões\UsuarioDesabilitadoException.cs" />

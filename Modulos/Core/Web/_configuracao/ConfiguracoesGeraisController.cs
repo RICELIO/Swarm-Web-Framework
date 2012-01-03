@@ -29,5 +29,13 @@ namespace Swarm.Core.Web.Configuracao
         {
             return ConfiguracoesGeraisSingleton.Instance.Configuracao;
         }
+
+        /// <summary>
+        /// Reiniciar as configurações envolvidas (SESSÃO).
+        /// </summary>
+        public static void Reset()
+        {
+            ConfiguracoesGeraisSingleton.Destroy();
+        }
     }
 }

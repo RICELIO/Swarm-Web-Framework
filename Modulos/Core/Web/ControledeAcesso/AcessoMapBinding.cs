@@ -57,7 +57,7 @@ namespace Swarm.Core.Web.ControledeAcesso
                 throw new Exception(Erros.ValorInvalido("Ligação :: Item de Acesso & UrlMap", "Tipo de Acesso"));
 
             if (this.Tipo == EnumAcesso.TipodeAcesso.Grupo || this.Tipo == EnumAcesso.TipodeAcesso.SuperGrupo)
-                throw new Exception("Ligação :: Item de Acesso & UrlMap - apenas Ambientes e Funcionalidades podem ser mapeadas.");
+                throw new Exception("Ligação :: Item de Acesso & UrlMap - Apenas Ambientes e Funcionalidades podem ser mapeadas.");
 
             if (this.Tipo == EnumAcesso.TipodeAcesso.Ambiente && !this.Principal)
                 throw new Exception("Ligação :: Item de Acesso & UrlMap - Só pode haver um único mapeamento associado ao Ambiente e este deve ser definido como Principal.");

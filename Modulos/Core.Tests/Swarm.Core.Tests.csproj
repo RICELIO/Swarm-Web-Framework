@@ -44,7 +44,6 @@
     <Compile Include="Library\Seguranca\Autenticacao\UsuarioTest.cs" />
     <Compile Include="Library\Seguranca\GrupoTest.cs" />
     <Compile Include="Library\Seguranca\GrupoUsuarioTest.cs" />
-    <Compile Include="PrepararAmbienteDefaultTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\ControledeAcesso\AcessoTest.cs" />
     <Compile Include="Web\FrontController\Common\CallBackPageFacadeTest.cs" />

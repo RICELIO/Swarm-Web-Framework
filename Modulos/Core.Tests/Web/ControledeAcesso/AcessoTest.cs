@@ -5,6 +5,7 @@ using System.Text;
 using NUnit.Framework;
 using Swarm.Utilitarios;
 using Swarm.Persistencia;
+using Swarm.Core.Web;
 using Swarm.Core.Web.ControledeAcesso;
 
 namespace Swarm.Tests.Core.Web.ControledeAcesso
@@ -162,6 +163,14 @@ namespace Swarm.Tests.Core.Web.ControledeAcesso
             AcessoController.Manter(objFuncionalidadeMAP_2, "usuario.teste", colecao);
 
             colecao.Persistir();
+        }
+
+        [Test]
+        public void DeveExistirPeloMenusUmItemdeMenuEnvolvido()
+        {
+            UsuarioCorrenteFacade.Environment = SecuritySettings.Ambientes.First(obj => obj.CodigoInterno == EnumAcesso.CodigoInterno_Ambiente.Indefinido).GUID;
+            Assert.NotNull(SecuritySettings.ItensdeMenu.First(obj => obj.TipodeAcesso == EnumAcesso.TipodeAcesso.Ambiente));
+            UsuarioCorrenteFacade.Environment = Valor.Vazio; // PREVENÇÃO
         }
 
         [TestFixtureTearDown]

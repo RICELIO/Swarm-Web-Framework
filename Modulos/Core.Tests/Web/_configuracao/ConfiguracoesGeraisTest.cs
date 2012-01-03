@@ -17,6 +17,8 @@ namespace Swarm.Tests.Core.Web.Configuracao
         [TestFixtureSetUp]
         public void InicializarObjetosEnvolvidos()
         {
+            try { ConfiguracoesGeraisController.Reset(); }
+            catch { }
             this.Configuracao = ConfiguracoesGeraisController.Get();
         }
 
