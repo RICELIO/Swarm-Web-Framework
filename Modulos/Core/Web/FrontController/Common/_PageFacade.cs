@@ -22,6 +22,7 @@ namespace Swarm.Core.Web.FrontController.Common
         public const string URI_Parametros = "pm"; // fluxo normal
         public const string URI_NEXT_ID = "nid"; // fluxo dependente
         public const string URI_NEXT_Parametros = "npm"; // fluxo dependente
+        public const string URI_SET_EXPIRED = "usexpi"; // controle de página expirada
 
         #endregion
 

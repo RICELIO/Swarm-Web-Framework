@@ -106,9 +106,9 @@ namespace Swarm.Utilitarios.Helpers.Web
         /// <param name="pagina">A página envolvida.</param>
         /// <param name="size">Tipo de janela que será aberta.</param>
         /// <param name="uri">URI da página que será carregada na janela envolvida.</param>
-        public static void OpenWindow(Page pagina, Janela.Size size, string uri)
+        public static string OpenWindow(Page pagina, Janela.Size size, string uri)
         {
-            Javascript.OpenWindow(pagina, size, uri, Valor.Zero, Valor.Zero);
+            return Javascript.OpenWindow(pagina, size, uri, Valor.Zero, Valor.Zero);
         }
 
         /// <summary>
@@ -119,9 +119,25 @@ namespace Swarm.Utilitarios.Helpers.Web
         /// <param name="uri">URI da página que será carregada na janela envolvida.</param>
         /// <param name="altura">Altura da janela envolvida.</param>
         /// <param name="largura">Largura da janela envolvida.</param>
-        public static void OpenWindow(Page pagina, Janela.Size size, string uri, int altura, int largura)
+        public static string OpenWindow(Page pagina, Janela.Size size, string uri, int altura, int largura)
         {
-            string strWindow = string.Format("window_{0}", pagina.ClientID);
+            return Javascript.OpenWindow(pagina, size, uri, Valor.Zero, Valor.Zero, Valor.Inativo);
+        }
+
+        /// <summary>
+        /// Abrir uma janela.
+        /// </summary>
+        /// <param name="pagina">A página envolvida.</param>
+        /// <param name="size">Tipo de janela que será aberta.</param>
+        /// <param name="uri">URI da página que será carregada na janela envolvida.</param>
+        /// <param name="altura">Altura da janela envolvida.</param>
+        /// <param name="largura">Largura da janela envolvida.</param>
+        /// <param name="apenasLeitura">Quando TRUE indica que o script não será executado, apenas retornado em string.</param>
+        public static string OpenWindow(Page pagina, Janela.Size size, string uri, int altura, int largura, bool apenasLeitura)
+        {
+            string strClientID = Checar.IsNull(pagina) ? Guid.NewGuid().ToString() : pagina.ClientID;
+            
+            string strWindow = string.Format("window_{0}", strClientID);
             altura = Checar.MenorouIgual(altura) ? Janela.Altura : altura;
             largura = Checar.MenorouIgual(largura) ? Janela.Largura : largura;
 
@@ -172,8 +188,10 @@ namespace Swarm.Utilitarios.Helpers.Web
                     }
             }
 
-            string strID = string.Format("newWindow_{0}", pagina.ClientID);
+            string strID = string.Format("newWindow_{0}", strClientID);
             Javascript.Add(pagina, strID, script, Valor.Ativo);
+            
+            return script.ToString();
         }
     }
 }

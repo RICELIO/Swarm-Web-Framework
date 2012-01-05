@@ -31,6 +31,8 @@ namespace Swarm.Web.Templates
             this.imgLogoMarca.ImageUrl = Configuracoes.Logomarca_WebPath;
             this.ltrMicroMenudoUsuario.Text = new MicroMenudoUsuario().Render();
 
+            this.ltrMenudoUsuarioTopo.Text = new MenudoUsuarioTopo().Render();
+
             this.lblTituloProduto.Text = ConfiguracoesGeraisController.Get().Produto_Titulo;
             this.lblNumeroVersao.Text = ConfiguracoesGeraisController.Get().GetVersaoAtual();
         }

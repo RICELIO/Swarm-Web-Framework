@@ -7,7 +7,7 @@ using Swarm.Core.Library.Seguranca.Autenticacao;
 
 namespace Swarm.Core.Web
 {
-    public class PageBase : Page
+    public class ControlBase : UserControl
     {
         #region Propriedades
 

@@ -1,0 +1,9 @@
+﻿#if(!$this.IsVisitante)
+<div class="Horizontal_Centro" style="padding-top: 5px;">
+    #foreach($item in $this.GetItensEnvolvidos)
+    <a href="$this.GetURI($item.ID,$item.TipodeAcesso)">$item.Titulo</a>&nbsp;#if(!$this.IsUltimoItem($item))<span style="padding-left: 5px; padding-right: 5px;">|</span>#end
+    #end
+</div>
+#else
+    &nbsp;
+#end

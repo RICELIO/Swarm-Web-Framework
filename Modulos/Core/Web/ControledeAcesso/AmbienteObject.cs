@@ -38,7 +38,6 @@ namespace Swarm.Core.Web.ControledeAcesso
 
         private AcessoMap ItemMap { get; set; }
         private List<SuperGrupo> SuperGrupos { get; set; }
-        private List<Funcionalidade> Funcionalidades { get; set; }
 
         #endregion
 
@@ -56,7 +55,6 @@ namespace Swarm.Core.Web.ControledeAcesso
 
             this.ItemMap = new AcessoMap();
             this.SuperGrupos = new List<SuperGrupo>();
-            this.Funcionalidades = new List<Funcionalidade>();
 
             this.Materializado = Valor.Inativo;
         }
@@ -137,7 +135,7 @@ namespace Swarm.Core.Web.ControledeAcesso
 
         public List<SuperGrupo> GetSuperGrupos()
         {
-            if (Checar.MaiorQue(this.Funcionalidades.Count))
+            if (Checar.MaiorQue(this.SuperGrupos.Count))
                 return this.SuperGrupos;
 
             SuperGrupo obj = new SuperGrupo();

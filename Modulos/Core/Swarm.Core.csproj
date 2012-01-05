@@ -53,6 +53,9 @@
     <Compile Include="Library\Seguranca\Autenticacao\_EnumAutenticacao.cs" />
     <Compile Include="Library\Seguranca\Autenticacao\Excessões\UsuarioBloqueadoException.cs" />
     <Compile Include="Library\Seguranca\Criptografia\CriptografiaWEB.cs" />
+    <Compile Include="Web\ControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Web\ControledeAcesso\AcessoMapForm.cs" />
     <Compile Include="Web\UsuarioCorrenteFacade.cs" />
     <Compile Include="Library\Seguranca\Autenticacao\UsuarioCorrenteSingleton.cs" />
@@ -106,6 +109,7 @@
     </Compile>
     <Compile Include="Web\PermissaoController.cs" />
     <Compile Include="Web\PermissaoObject.cs" />
+    <Compile Include="Web\WebBase.cs" />
     <Compile Include="Web\_configuracao\ConfiguracoesGeraisController.cs" />
     <Compile Include="Web\_configuracao\ConfiguracoesGeraisObject.cs" />
     <Compile Include="Web\_configuracao\ConfiguracoesGeraisSingleton.cs" />

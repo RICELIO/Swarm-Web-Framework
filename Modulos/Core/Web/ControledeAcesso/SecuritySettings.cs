@@ -91,13 +91,17 @@ namespace Swarm.Core.Web
         {
             List<AcessoMapForm> itens = new List<AcessoMapForm>();
 
+            // Prevenção contra processamento indevido.
+            if (!UsuarioCorrenteFacade.Instance.Autenticado || Checar.IsNull(UsuarioCorrenteFacade.Environment))
+                return itens;
+
             try
             {
                 Ambiente objAmbiente = SecuritySettings.Ambientes.FirstOrDefault(obj => obj.GUID == UsuarioCorrenteFacade.Environment);
 
                 // PÁGINA INICIAL DO SISTEMA
                 AcessoMap mapAmbiente = objAmbiente.GetItemBase();
-                itens.Add(new AcessoMapForm("Início", mapAmbiente.IdAcesso, EnumAcesso.TipodeAcesso.Ambiente));
+                itens.Add(new AcessoMapForm("Início", mapAmbiente.UrlMapID, EnumAcesso.TipodeAcesso.Ambiente));
 
                 // SUPER-GRUPOS QUE SERÃO EXIBIDOS NO MENU
                 objAmbiente.GetSuperGrupos().ForEach(mapSuperGrupo =>
