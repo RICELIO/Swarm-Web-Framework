@@ -106,6 +106,10 @@
       <Project>{F2276397-C7B3-4512-9FAA-666FE6904A26}</Project>
       <Name>Swarm.Persistencia</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Modulos\Utilitarios\Swarm.Utilitarios.csproj">
+      <Project>{D9EBFAA1-94FC-4B32-8D52-2557EF4322B3}</Project>
+      <Name>Swarm.Utilitarios</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="favico.ico" />

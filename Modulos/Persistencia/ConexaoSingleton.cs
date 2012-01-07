@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using Swarm.Utilitarios;
+using Swarm.Utilitarios.Library.Seguranca.Criptografia;
 
 namespace Swarm.Persistencia
 {
@@ -41,10 +42,11 @@ namespace Swarm.Persistencia
 
         private Conexão()
         {
-            this.Servidor = Configuracao.Obter("Servidor");
-            this.BancodeDados = Configuracao.Obter("BancoDeDados");
-            this.Usuario = Configuracao.Obter("Usuario");
-            this.Senha = Configuracao.Obter("Senha");
+            Criptografia objCriptografia = new CriptografiaDES3();
+            this.Servidor = objCriptografia.Descriptografar(Configuracao.Obter("Servidor"));
+            this.BancodeDados = objCriptografia.Descriptografar(Configuracao.Obter("BancoDeDados"));
+            this.Usuario = objCriptografia.Descriptografar(Configuracao.Obter("Usuario"));
+            this.Senha = objCriptografia.Descriptografar(Configuracao.Obter("Senha"));
             this.SGBD = (EnumPersistencia.SGBD)Conversoes.ToInt32(Configuracao.Obter("SGBD"));
         }
 

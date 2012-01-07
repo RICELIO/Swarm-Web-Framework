@@ -4,8 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Swarm.Utilitarios;
+using Swarm.Utilitarios.Library.Seguranca.Criptografia;
 using Swarm.Persistencia;
-using Swarm.Core.Library.Seguranca.Criptografia;
 using Swarm.Core.Web;
 
 namespace Swarm.Core.Library.Seguranca.Autenticacao
@@ -51,7 +51,7 @@ namespace Swarm.Core.Library.Seguranca.Autenticacao
         {
             try
             {
-                Criptografia.Criptografia criptografia = UsuarioController.GetModelodeCriptografia();
+                Criptografia criptografia = UsuarioController.GetModelodeCriptografia();
 
                 if (this.Bloqueado)
                     throw new UsuarioBloqueadoException();

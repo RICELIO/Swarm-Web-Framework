@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Swarm.Core.Web.ControledeAcesso;
-using Swarm.Core.Library.Seguranca.Criptografia;
+using Swarm.Utilitarios.Library.Seguranca.Criptografia;
 
 namespace Swarm.Ferramentas
 {

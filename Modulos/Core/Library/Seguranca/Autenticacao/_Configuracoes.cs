@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Swarm.Utilitarios;
-using Swarm.Core.Library.Seguranca.Criptografia;
+using Swarm.Utilitarios.Library.Seguranca.Criptografia;
 
 namespace Swarm.Core
 {

@@ -52,7 +52,6 @@
     <Compile Include="Library\Seguranca\Autenticacao\Excessões\SenhaInvalidaException.cs" />
     <Compile Include="Library\Seguranca\Autenticacao\_EnumAutenticacao.cs" />
     <Compile Include="Library\Seguranca\Autenticacao\Excessões\UsuarioBloqueadoException.cs" />
-    <Compile Include="Library\Seguranca\Criptografia\CriptografiaWEB.cs" />
     <Compile Include="Web\ControlBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -67,10 +66,6 @@
     <Compile Include="Library\Seguranca\GrupoUsuarioController.cs" />
     <Compile Include="Library\Seguranca\GrupoUsuarioBinding.cs" />
     <Compile Include="Library\Seguranca\GrupoObject.cs" />
-    <Compile Include="Library\Seguranca\Criptografia\Criptografia.cs" />
-    <Compile Include="Library\Seguranca\Criptografia\CriptografiaDES3.cs" />
-    <Compile Include="Library\Seguranca\Criptografia\CriptografiaMD5.cs" />
-    <Compile Include="Library\Seguranca\Criptografia\_EnumCriptografia.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="ModeloControladorBase.cs" />
     <Compile Include="ModeloObjetoBase.cs" />

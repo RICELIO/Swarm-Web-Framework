@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Library\Seguranca\Criptografia\Criptografia.cs" />
+    <Compile Include="Library\Seguranca\Criptografia\CriptografiaDES3.cs" />
+    <Compile Include="Library\Seguranca\Criptografia\CriptografiaMD5.cs" />
+    <Compile Include="Library\Seguranca\Criptografia\CriptografiaWEB.cs" />
+    <Compile Include="Library\Seguranca\Criptografia\_EnumCriptografia.cs" />
     <Compile Include="Helpers\Common\Arquivo.cs" />
     <Compile Include="Helpers\Common\Canvas.cs" />
     <Compile Include="Helpers\Common\Configuracao.cs" />

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Swarm.Utilitarios;
+using Swarm.Utilitarios.Library.Seguranca.Criptografia;
 using Swarm.Persistencia;
-using Swarm.Core.Library.Seguranca.Criptografia;
 
 namespace Swarm.Core.Library.Seguranca.Autenticacao
 {
@@ -80,7 +80,7 @@ namespace Swarm.Core.Library.Seguranca.Autenticacao
         /// <summary>
         /// Método responsável por recuperar o modelo de criptografia utilizado.
         /// </summary>
-        public static Criptografia.Criptografia GetModelodeCriptografia()
+        public static Criptografia GetModelodeCriptografia()
         {
             switch (Configuracoes.Usuario_TipoCriptografia)
             {
@@ -104,7 +104,7 @@ namespace Swarm.Core.Library.Seguranca.Autenticacao
             if (Checar.IsCampoVazio(senhaAtual) || !Checar.IsCampoVazio(novaSenha))
                 throw new AlterarSenhaDadosIncompletosException();
 
-            Criptografia.Criptografia objCriptografia = UsuarioController.GetModelodeCriptografia();
+            Criptografia objCriptografia = UsuarioController.GetModelodeCriptografia();
             string senhaAtualCriptografada = objCriptografia.Criptografar(senhaAtual);
 
             Usuario objUsuario = new Usuario(id);

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using Swarm.Utilitarios;
-using Swarm.Core.Library.Seguranca.Criptografia;
+using Swarm.Utilitarios.Library.Seguranca.Criptografia;
 using Swarm.Core.Web.FrontController.Common;
 
 namespace Swarm.Core.Web.FrontController

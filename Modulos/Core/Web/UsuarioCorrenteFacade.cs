@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Swarm.Utilitarios;
+using Swarm.Utilitarios.Library.Seguranca.Criptografia;
 using Swarm.Persistencia;
 using Swarm.Core.Library.Seguranca.Autenticacao;
-using Swarm.Core.Library.Seguranca.Criptografia;
 
 namespace Swarm.Core.Web
 {
