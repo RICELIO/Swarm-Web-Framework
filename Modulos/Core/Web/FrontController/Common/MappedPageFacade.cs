@@ -48,13 +48,15 @@ namespace Swarm.Core.Web.FrontController.Common
                 Ambiente objAmbiente = SecuritySettings.Ambientes.Find(obj => obj.GUID == UsuarioCorrenteFacade.Environment);
                 objAmbiente.GetSuperGrupos().ForEach(sg =>
                 {
+                    if (paginaDisponivel) return;
                     sg.GetGrupos().ForEach(g =>
                     {
+                        if (paginaDisponivel) return;
                         g.GetFuncionalidades().ForEach(f =>
                         {
+                            if (paginaDisponivel) return;
                             bool paginaLocalizada = !Checar.IsNull(f.GetItens().Find(obj => obj.UrlMapID == this.ID));
                             paginaDisponivel = paginaLocalizada && f.Habilitado;
-                            if (paginaDisponivel) return;
                         });
                     });
                 });

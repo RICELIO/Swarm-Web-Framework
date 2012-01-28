@@ -29,5 +29,14 @@ namespace Swarm.Core.Web.FrontController.Common
         {
             return Valor.Vazio;
         }
+
+        #region Métodos Externos
+
+        public static bool IsNotControllerPage(HttpContext conteudo)
+        {
+            return !UrlMap.Find(Map.FrontController.Controller).Url.ToLower().Contains(PageFacade.GetFileName(conteudo));
+        }
+
+        #endregion
     }
 }

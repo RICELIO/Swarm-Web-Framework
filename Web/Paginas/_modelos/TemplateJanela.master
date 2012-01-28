@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="TemplateJanela.master.cs"
+    Inherits="Swarm.Web.Templates.TemplateJanela" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>&copy;&nbsp;2011 Swarm Consultoria e Sistemas</title>
+    <link rel="SHORTCUT ICON" href="~/favico.ico" type="image/x-icon" />
+    <link href="~/_content/CSS/Portal/All.css" rel="stylesheet" type="text/css" />
+    <link href="~/_content/CSS/Portal/StyleSheet_Padrao.css" rel="stylesheet" type="text/css" />
+    <link href="~/_content/CSS/Portal/StyleSheet_Janela.css" rel="stylesheet" type="text/css" />
+
+    <script src="./_content/Javascript/Utilitarios.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="janela_head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="frmTemplateJanela" runat="server" class="Pagina Formulario">
+    <div class="Horizontal_Esquerda">
+        <div class="Formulario_Titulo">
+            <asp:Label ID="lblTituloPagina" runat="server" Text="..." />
+        </div>
+        <asp:ContentPlaceHolder ID="janela_body" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

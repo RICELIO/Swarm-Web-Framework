@@ -1,0 +1,91 @@
+﻿@media screen, print
+{
+    *
+    {
+        margin: 0px;
+    }
+
+    * html
+    {
+        height: 100%;
+    }
+
+    html
+    {
+        margin-top: 0.4%;
+    }
+
+    html, body
+    {
+        background-color: #DEDEDE;
+        height: 99.1%;
+    }
+
+    form
+    {
+        min-height: 100%;
+        position: relative;
+    }
+
+    .Formulario
+    {
+        width: 97%;
+        background-color: #F1F1F1;
+        border: solid 1px #C2C2C2;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .Formulario_Titulo
+    {
+        min-height: 25px;
+        background-color: White;
+        background-image: url(../../Images/Icones/m_gear.png);
+        background-position: 3px center;
+        background-repeat: no-repeat;
+        border-bottom: solid 1px #C2C2C2;
+        padding-left: 30px;
+        padding-top: 2px;
+        padding-bottom: 1px;
+    }
+     .Formulario_Titulo *
+    {
+        font-size: 140%;
+        font-weight: bold;        
+    }
+
+    .Formulario_Topo
+    {
+        margin-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .Formulario_Corpo
+    {
+        margin-top: 20px;
+    }
+
+    .Formulario_Bloco_SubTitulo
+    {
+        min-height: 18px;
+        background-color: White;
+        background-image: url(../../Images/Icones/pp_bolinha_cinza.png);
+        background-position: 5px center;
+        background-repeat: no-repeat;
+        border-top: solid 1px #C2C2C2;
+        border-bottom: solid 1px #C2C2C2;
+        padding-left: 17px;
+        font-weight: bold;
+        padding-top: 2px;
+        padding-bottom: 1px;
+    }
+
+    .Formulario_Bloco_Conteudo
+    {
+        margin-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}

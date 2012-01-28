@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Swarm.Web.Code.Portal.Controles;
+using Swarm.Utilitarios;
 using Swarm.Core;
 using Swarm.Core.Web.Configuracao;
-using Swarm.Web.Code.Portal.Controles;
+using Swarm.Core.Web.FrontController;
 
 namespace Swarm.Web.Templates
 {
@@ -26,7 +28,7 @@ namespace Swarm.Web.Templates
 
         protected void DefinirItensView()
         {
-            this.Page.Title = ConfiguracoesGeraisController.Get().Produto_Titulo;
+            this.Page.Title = Navigation.GetTitle();
 
             this.imgLogoMarca.ImageUrl = Configuracoes.Logomarca_WebPath;
             this.ltrMicroMenudoUsuario.Text = new MicroMenudoUsuario().Render();

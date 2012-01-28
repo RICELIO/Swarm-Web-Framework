@@ -128,14 +128,10 @@ END
 
 GO
 
-INSERT INTO AcessoSuperGrupo VALUES
-(
- '5dc0f243-7aa7-42c6-b4d1-cbb19c06f1f0',
- 'Super-Grupo de páginas que não serão exibidas para o Usuário',
- 1,0,
- (SELECT TOP 1 IdAcessoAmbiente FROM AcessoAmbiente WHERE GUID = '1febb761-7e5c-4e8b-8916-f0db37724289'),
- 1,'administrador',GETDATE(),null
-)
+DECLARE @IdAcessoAmbiente [bigint];
+SET @IdAcessoAmbiente = (SELECT TOP 1 IdAcessoAmbiente FROM AcessoAmbiente WHERE GUID = '1febb761-7e5c-4e8b-8916-f0db37724289');
+INSERT INTO AcessoSuperGrupo VALUES ('5dc0f243-7aa7-42c6-b4d1-cbb19c06f1f0','Super-Grupo de páginas que não serão exibidas para o Usuário',1,0,@IdAcessoAmbiente,1,'administrador',GETDATE(),null)
+INSERT INTO AcessoSuperGrupo VALUES ('10a15003-7cd0-4bb6-b093-b2565a75d901','Administrativo',1,1,@IdAcessoAmbiente,NULL,'administrador',GETDATE(),NULL)
 
 GO
 
@@ -162,15 +158,16 @@ END
 
 GO
 
-INSERT INTO AcessoGrupo VALUES
-(
- 'e34690cc-0fda-426b-82b6-97602f7e14b3',
- 'Grupo de páginas que não serão exibidas para o Usuário',
- 1,0,
- (SELECT TOP 1 IdAcessoSuperGrupo FROM AcessoSuperGrupo WHERE GUID = '5dc0f243-7aa7-42c6-b4d1-cbb19c06f1f0'),
- 1,'administrador',GETDATE(),null
-)
+DECLARE @IdAcessoSuperGrupo [bigint];
+SET @IdAcessoSuperGrupo = (SELECT TOP 1 IdAcessoSuperGrupo FROM AcessoSuperGrupo WHERE GUID = '5dc0f243-7aa7-42c6-b4d1-cbb19c06f1f0');
+INSERT INTO AcessoGrupo VALUES ('e34690cc-0fda-426b-82b6-97602f7e14b3','Grupo de páginas que não serão exibidas para o Usuário',1,0,@IdAcessoSuperGrupo,1,'administrador',GETDATE(),null)
 
+GO
+
+DECLARE @IdAcessoSuperGrupo [bigint];
+SET @IdAcessoSuperGrupo = (SELECT TOP 1 IdAcessoSuperGrupo FROM AcessoSuperGrupo WHERE GUID = '10a15003-7cd0-4bb6-b093-b2565a75d901');
+INSERT INTO AcessoGrupo VALUES ('017a5be9-509d-4ab0-a912-5ac79f4b6cf0','Sistema',1,1,@IdAcessoSuperGrupo,NULL,'administrador',GETDATE(),null)
+INSERT INTO AcessoGrupo VALUES ('689498e3-a949-4296-88b4-8841ced27825','Segurança',1,1,@IdAcessoSuperGrupo,NULL,'administrador',GETDATE(),null)
 
 GO
 
@@ -197,15 +194,22 @@ END
 
 GO
 
-INSERT INTO AcessoFuncionalidade VALUES
-(
- 'ea0bd008-9b63-4c67-83ec-f321c4da28f8',
- 'Seleção de Funcionalidade',
- 'Esta página é responsável pela gestão dos itens a serem exibidos para o usuário selecionar.',
- 1,0,
- (SELECT TOP 1 IdAcessoGrupo FROM AcessoGrupo WHERE GUID = 'e34690cc-0fda-426b-82b6-97602f7e14b3'),
- 'administrador',GETDATE(),null
-)
+DECLARE @IdAcessoGrupo [bigint];
+SET @IdAcessoGrupo = (SELECT TOP 1 IdAcessoGrupo FROM AcessoGrupo WHERE GUID = 'e34690cc-0fda-426b-82b6-97602f7e14b3');
+INSERT INTO AcessoFuncionalidade VALUES ('ea0bd008-9b63-4c67-83ec-f321c4da28f8','Seleção de Funcionalidade','Esta página é responsável pela gestão dos itens a serem exibidos para o usuário selecionar.',1,0,@IdAcessoGrupo,'administrador',GETDATE(),null)
+INSERT INTO AcessoFuncionalidade VALUES ('cd8415a8-3853-42f0-a375-983a5f45f795','Perfil','Esta página é responsável pela manutenção do perfil de acesso do usuário logado.',1,0,@IdAcessoGrupo,'administrador',GETDATE(),null)
+
+GO
+
+DECLARE @IdAcessoGrupo [bigint];
+SET @IdAcessoGrupo = (SELECT TOP 1 IdAcessoGrupo FROM AcessoGrupo WHERE GUID = '017a5be9-509d-4ab0-a912-5ac79f4b6cf0');
+INSERT INTO AcessoFuncionalidade VALUES ('f50df45f-2b04-443e-934f-1ae40fc33384','Controle de Navegação','Responsável pela manutenção das funcionalidades disponibilizadas no sistema. Sua utilização não é recomendada para usuários que não tenham pleno conhecimento referente a mecânica de funcionamento do sistema.',1,1,@IdAcessoGrupo,'administrador',GETDATE(),null)
+
+GO
+
+DECLARE @IdAcessoGrupo [bigint];
+SET @IdAcessoGrupo = (SELECT TOP 1 IdAcessoGrupo FROM AcessoGrupo WHERE GUID = '689498e3-a949-4296-88b4-8841ced27825');
+INSERT INTO AcessoFuncionalidade VALUES ('f8e67837-79e6-47f6-b23c-94bbf4b818de','Usuários','Funcionalide responsável pela manutenção dos usuários que utilizam o sistema.',1,1,@IdAcessoGrupo,'administrador',GETDATE(),null)
 
 GO
 
@@ -229,21 +233,33 @@ END
 
 GO
 
-INSERT INTO AcessoMap VALUES
-(
- 1,
- (SELECT TOP 1 IdAcessoAmbiente FROM AcessoAmbiente WHERE GUID = '1febb761-7e5c-4e8b-8916-f0db37724289'),
- 6,1,'administrador',GETDATE(),null
-)
+DECLARE @IdAcessoAmbiente [bigint];
+SET @IdAcessoAmbiente = (SELECT TOP 1 IdAcessoAmbiente FROM AcessoAmbiente WHERE GUID = '1febb761-7e5c-4e8b-8916-f0db37724289');
+INSERT INTO AcessoMap VALUES (1,@IdAcessoAmbiente,6,1,'administrador',GETDATE(),null)
 
 GO
 
-INSERT INTO AcessoMap VALUES
-(
- 4,
- (SELECT TOP 1 IdAcessoFuncionalidade FROM AcessoFuncionalidade WHERE GUID = 'ea0bd008-9b63-4c67-83ec-f321c4da28f8'),
- 7,1,'administrador',GETDATE(),null
-)
+DECLARE @IdAcessoFuncionalidade [bigint];
+SET @IdAcessoFuncionalidade = (SELECT TOP 1 IdAcessoFuncionalidade FROM AcessoFuncionalidade WHERE GUID = 'ea0bd008-9b63-4c67-83ec-f321c4da28f8');
+INSERT INTO AcessoMap VALUES (4,@IdAcessoFuncionalidade,7,1,'administrador',GETDATE(),null)
+
+GO
+
+DECLARE @IdAcessoFuncionalidade [bigint];
+SET @IdAcessoFuncionalidade = (SELECT TOP 1 IdAcessoFuncionalidade FROM AcessoFuncionalidade WHERE GUID = 'f50df45f-2b04-443e-934f-1ae40fc33384');
+INSERT INTO AcessoMap VALUES (4,@IdAcessoFuncionalidade,8,1,'administrador',GETDATE(),null)
+
+GO
+
+DECLARE @IdAcessoFuncionalidade [bigint];
+SET @IdAcessoFuncionalidade = (SELECT TOP 1 IdAcessoFuncionalidade FROM AcessoFuncionalidade WHERE GUID = 'f8e67837-79e6-47f6-b23c-94bbf4b818de');
+INSERT INTO AcessoMap VALUES (4,@IdAcessoFuncionalidade,9,1,'administrador',GETDATE(),null)
+
+GO
+
+DECLARE @IdAcessoFuncionalidade [bigint];
+SET @IdAcessoFuncionalidade = (SELECT TOP 1 IdAcessoFuncionalidade FROM AcessoFuncionalidade WHERE GUID = 'cd8415a8-3853-42f0-a375-983a5f45f795');
+INSERT INTO AcessoMap VALUES (4,@IdAcessoFuncionalidade,10,1,'administrador',GETDATE(),null)
 /* ============================= CONTROLE DE ACESSO ============================= */
 
 GO

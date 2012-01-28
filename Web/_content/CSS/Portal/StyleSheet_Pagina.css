@@ -1,0 +1,36 @@
+﻿@media screen, print
+{
+    .Formulario_Titulo
+    {
+        min-height: 25px;
+        background-color: White;
+        background-image: url(../../Images/Icones/m_gear.png);
+        background-position: 3px center;
+        background-repeat: no-repeat;
+        border: solid 1px #C2C2C2;
+        padding-left: 30px;
+        padding-top: 3px;
+        padding-bottom: 1px;
+        font-size: 140%;
+        font-weight: bold;
+    }
+     .Formulario_Titulo *
+    {
+        font-size: 140%;
+        font-weight: bold;
+    }
+    
+    .Formulario_Topo
+    {
+        margin-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .Formulario_Corpo
+    {
+        margin-top: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

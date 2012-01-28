@@ -57,6 +57,9 @@ namespace Swarm.Tests.Core.Web.FrontController.Common
             bool isHomePage = HomePageFacade.IsTrue(PAGINA_ID);
 
             Assert.IsTrue(isHomePage, "Não foi possível localizar a associação com o cenário HOME.");
+
+            try { UsuarioCorrenteFacade.Desconectar(); }
+            catch { /* Prevenção */ }
         }
 
         [Test]
@@ -74,9 +77,6 @@ namespace Swarm.Tests.Core.Web.FrontController.Common
             PermissaoController.Manter(this.Permissao, "usuario.teste", null);
 
             Assert.IsTrue(this.ValidarPermissoesStub(), "O usuário deveria possui permissão de acesso a HOME.");
-
-            try { UsuarioCorrenteFacade.Desconectar(); }
-            catch { /* Prevenção */ }
         }
 
         [TestFixtureTearDown]

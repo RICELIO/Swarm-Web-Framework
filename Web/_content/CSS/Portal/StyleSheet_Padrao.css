@@ -1,0 +1,158 @@
+﻿@media screen, print
+{
+    .Pagina
+    {
+        width: 100%;
+        font-size: 12px;
+        line-height: normal;
+    }
+
+    .Horizontal_Centro
+    {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .Horizontal_Esquerda
+    {
+        text-align: left;
+    }
+    .Horizontal_Direita
+    {
+        text-align: right;
+    }
+    .Horizontal_Justificado
+    {
+        text-align: justify;
+    }
+
+    .Vertical_Centro
+    {
+        vertical-align: middle;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .Vertical_FundoConteudo
+    {
+        vertical-align: text-bottom;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .Dimensao_LarguraPadrao
+    {
+        width: 100%;
+    }
+
+    .Texto_10px
+    {
+        font-size: 10px;
+    }
+
+    .Bloco_Foto
+    {
+        border: solid 1px #BFBFBF;
+        background-color: #E9E9E9;
+        width: 50px;
+        height: 56px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    div .Bloco_LadoaLado
+    {
+        float: left;
+    }
+    div .Bloco_LadoaLado_Fechar
+    {
+        clear: both;
+    }
+
+    .Espacamento_Anterior_20px
+    {
+        margin-top: 20px;
+    }
+    .Espacamento_Anterior_10px
+    {
+        margin-top: 10px;
+    }
+    .Espacamento_Anterior_20px
+    {
+        margin-bottom: 20px;
+    }
+    .Espacamento_Posterior_10px
+    {
+        margin-bottom: 10px;
+    }
+
+    .Formulario_CampoTexto
+    {
+        height: 18px;
+        border: solid 1px #333333;
+        background-color: #F5F5F5;
+        font-size: 11px;
+        vertical-align: middle;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .Formulario_CaixaSelecao
+    {
+    }
+    .Formulario_CaixaSelecao input[type="checkbox"], input[type="radio"]
+    {
+        height: 12px;
+        margin-right: 4px;
+        vertical-align: middle;
+    }
+    .Formulario_CaixaSelecao label
+    {
+        vertical-align: middle;
+    }
+
+    .Formulario_Botao
+    {
+        height: 20px;
+        border: outset 1px #333333;
+        background-color: #F5F5F5;
+        font-weight: bold;
+        min-width: 80px;
+    }
+
+    table .Tabela_Descricao
+    {
+        width: 30%;
+        text-align: right;
+        padding-right: 10px;
+        font-weight: bold;
+    }
+    table .Tabela_Descricao_Obrigatorio
+    {
+        width: 30%;
+        background-image: url(../../Images/Icones/p_obrigatorio.png);
+        background-position: right 5px center;
+        background-repeat: no-repeat;
+        text-align: right;
+        padding-right: 25px;
+        font-weight: bold;
+    }
+    table .Tabela_Conteudo
+    {
+        width: 70%;
+        text-align: left;
+    }
+    table .Tabela_Informacao
+    {
+        height: 40px;
+    }
+    table .Tabela_Informacao_Obrigatorio
+    {
+        height: 40px;
+        background-image: url(../../Images/Icones/p_obrigatorio.png);
+        background-position: 5px center;
+        background-repeat: no-repeat;
+        padding-left: 25px;
+        font-style: italic;
+    }
+}

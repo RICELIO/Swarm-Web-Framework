@@ -64,10 +64,8 @@ namespace Swarm.Web.Code.Portal.Controles
                 case EnumAcesso.TipodeAcesso.Grupo:
                     string parametros = string.Format("UrlID={0}&TipoAcesso={1}", id, (int)enumTipodeAcesso);
                     return Navigation.GetURI(Map.Portal.VisualizarControlesdeAcesso, parametros);
-                    break;
                 case EnumAcesso.TipodeAcesso.Funcionalidade:
-                    return string.Format("javascript:{0}", Javascript.OpenWindow(null, Janela.Size.Normal, Navigation.GetURI(id), Janela.Altura, Janela.Largura));
-                    break;
+                    return string.Format("javascript:{0}", Javascript.OpenWindow(null, Janela.Size.Normal, Navigation.GetURI(id), Janela.Altura, Janela.Largura, Valor.Ativo));
             }
 
             return uri;

@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Paginas/_modelos/TemplateHome.master"
+    AutoEventWireup="true" CodeFile="TemplatePagina.master.cs" Inherits="Swarm.Web.Templates.TemplatePagina" %>
+
+<asp:Content ID="head" ContentPlaceHolderID="home_head" runat="Server">
+    <link href="_content/CSS/Portal/StyleSheet_Pagina.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="pagina_head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="body" ContentPlaceHolderID="home_body" runat="Server">
+    <div class="Horizontal_Esquerda" style="padding-left: 20px; padding-right: 20px;">
+        <div>
+            <table class="Dimensao_LarguraPadrao">
+                <tbody>
+                    <tr>
+                        <td style="width: 36px;">
+                            <img class="Vertical_Centro" src="./_content/Images/Icones/m_app_2.png" alt="" />
+                        </td>
+                        <td style="padding-left: 10px;">
+                            <h1 class="Vertical_Centro">
+                                <asp:Label ID="lblTituloPagina" runat="server" Text="..." />
+                            </h1>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="margin-top: 35px;">
+            <asp:ContentPlaceHolder ID="pagina_body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+</asp:Content>

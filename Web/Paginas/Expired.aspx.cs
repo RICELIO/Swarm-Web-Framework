@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Swarm.Core.Web;
 using Swarm.Core.Web.FrontController.Common;
 using Swarm.Utilitarios;
+using Swarm.Utilitarios.Library.Seguranca.Criptografia;
 
 namespace Swarm.Web
 {
@@ -19,14 +20,18 @@ namespace Swarm.Web
             get { return Conversoes.ToInt32(base.GetParametro(PageFacade.URI_NEXT_ID)); }
         }
 
-        public string ProximaPagina_Parametros
+        public string ProximaPagina_Parametros_Encrypt
         {
             get { return base.GetParametro(PageFacade.URI_NEXT_Parametros); }
+        }
+        public string ProximaPagina_Parametros
+        {
+            get { return new CriptografiaWEB().Descriptografar(base.GetParametro(PageFacade.URI_NEXT_Parametros)); }
         }
 
         public string AmbienteSelecionado
         {
-            get { return base.GetParametro("AmbienteToken"); }
+            get { return base.GetParametro(PageFacade.URI_Ambiente_TOKEN); }
         }
 
         #endregion
@@ -45,10 +50,10 @@ namespace Swarm.Web
 
         protected void DefinirItensView()
         {
-            if (!Checar.IsCampoVazio(this.AmbienteSelecionado))
+            if (base.UsuarioLogado.Autenticado && !Checar.IsCampoVazio(this.AmbienteSelecionado))
                 this.ctAutenticador.Operacao_DefinirAmbiente(this.AmbienteSelecionado, this.ProximaPagina_ID, this.ProximaPagina_Parametros);
             else
-                this.ctAutenticador.Operacao_PrepararItensControl(Valor.Ativo);
+                this.ctAutenticador.Operacao_PrepararItensControl(Valor.Ativo, this.ProximaPagina_ID, this.ProximaPagina_Parametros_Encrypt);
         }
 
         #endregion

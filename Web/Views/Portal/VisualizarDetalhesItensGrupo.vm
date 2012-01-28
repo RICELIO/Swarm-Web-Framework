@@ -1,0 +1,43 @@
+﻿<div class="Horizontal_Esquerda" style="padding-left: 20px; padding-right: 20px;">
+    <div>
+        <table class="Dimensao_LarguraPadrao">
+            <tbody>
+                <tr>
+                    <td style="width: 36px;">
+                        <img class="Vertical_Centro" src="./_content/Images/Icones/m_app.png" alt="" />
+                    </td>
+                    <td style="padding-left: 10px;">
+                        <h1 class="Vertical_Centro">$this.GetTitulo</h1>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-top: 35px; padding-left: 40px; padding-right: 40px;">
+    #foreach($funcionalidade in $this.GetFuncionalidades)
+    #odd
+        <div style="background-color: #F1F1F1; padding: 5px 3px 7px 3px; margin-bottom: 4px;">
+    #even
+        <div style="background-color: #F9F9F9; padding: 5px 3px 7px 3px; margin-bottom: 2px;">
+    #each
+            <div>
+                <table class="Dimensao_LarguraPadrao">
+                    <tbody>
+                        <tr>
+                            <td style="width: 19px;">
+                                <img class="Vertical_Centro" src="./_content/Images/Icones/m_indicador_2.png" alt="" />
+                            </td>
+                            <td style="padding-left: 5px;">
+                                <a href="$this.GetURI($funcionalidade.ID)"><h2 class="Vertical_Centro">$funcionalidade.Titulo</h2></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>                
+            </div>
+            <div style="margin-top: 3px;">
+                $funcionalidade.Descricao
+            </div>
+        </div>
+    #end
+    </div>
+</div>

@@ -12,8 +12,13 @@ namespace Swarm.Core.Web.ControledeAcesso
     public class AcessoMapForm
     {
         public AcessoMapForm(string titulo, long id, EnumAcesso.TipodeAcesso tipodeAcesso)
+            : this(titulo, Valor.Vazio, id, tipodeAcesso)
+        {
+        }
+        public AcessoMapForm(string titulo, string descricao, long id, EnumAcesso.TipodeAcesso tipodeAcesso)
         {
             this.Titulo = titulo;
+            this.Descricao = descricao;
             this.ID = id;
             this.TipodeAcesso = tipodeAcesso;
             this.Prioridade = this.TipodeAcesso == EnumAcesso.TipodeAcesso.Ambiente ? Valor.Um : Valor.Dois;
@@ -22,6 +27,7 @@ namespace Swarm.Core.Web.ControledeAcesso
         #region Propriedades
 
         public string Titulo { get; private set; }
+        public string Descricao { get; private set; }
         public long ID { get; private set; }
         public EnumAcesso.TipodeAcesso TipodeAcesso { get; private set; }
         public int Prioridade { get; private set; }

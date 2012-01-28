@@ -28,5 +28,14 @@ namespace Swarm.Core.Web.FrontController.Common
         {
             return UrlMap.Find(Map.Seguranca.Expired).Url;
         }
+
+        #region Métodos Externos
+
+        public static bool IsTrue(int pageID)
+        {
+            return UrlMap.Find(Map.Seguranca.Expired).ID == pageID;
+        }
+
+        #endregion
     }
 }

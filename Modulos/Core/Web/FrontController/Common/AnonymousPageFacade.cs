@@ -36,12 +36,14 @@ namespace Swarm.Core.Web.FrontController.Common
                 Ambiente objAmbienteAnonimo = SecuritySettings.Find(EnumAcesso.CodigoInterno_Ambiente.Anonimo);
                 objAmbienteAnonimo.GetSuperGrupos().ForEach(sg =>
                     {
+                        if (isAnonymousPage) return;
                         sg.GetGrupos().ForEach(g =>
                             {
+                                if (isAnonymousPage) return;
                                 g.GetFuncionalidades().ForEach(f =>
                                     {
-                                        isAnonymousPage = !Checar.IsNull(f.GetItens().Find(obj => obj.UrlMapID == pageID));
                                         if (isAnonymousPage) return;
+                                        isAnonymousPage = !Checar.IsNull(f.GetItens().Find(obj => obj.UrlMapID == pageID));
                                     });
                             });
                     });

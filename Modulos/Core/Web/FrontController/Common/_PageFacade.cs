@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
-using Swarm.Utilitarios;
 using System.Web.UI;
+using Swarm.Utilitarios;
 
 namespace Swarm.Core.Web.FrontController.Common
 {
@@ -18,11 +19,15 @@ namespace Swarm.Core.Web.FrontController.Common
 
         #region Constantes
 
+        public const string HANDLER_PARAMETROS = "Handler_Orig_Params";
+        public const string HANDLER_PARAMETROS_ADICIONAIS = "Handler_Orig_AdditionalParams";
+
         public const string URI_ID = "id"; // fluxo normal
         public const string URI_Parametros = "pm"; // fluxo normal
         public const string URI_NEXT_ID = "nid"; // fluxo dependente
         public const string URI_NEXT_Parametros = "npm"; // fluxo dependente
         public const string URI_SET_EXPIRED = "usexpi"; // controle de página expirada
+        public const string URI_Ambiente_TOKEN = "ambtok"; // controle de ambiente envolvido
 
         #endregion
 
@@ -35,13 +40,10 @@ namespace Swarm.Core.Web.FrontController.Common
 
         public Page GetPageRequested()
         {
-            if (!this.ValidarControledeAcesso())
-                Navigation.ShowMessage("A funcionalidade solicitada não está disponível no momento.");
-
             if (!this.ValidarAutenticacao())
             {
                 string parametros = Valor.Vazio;
-                string queryPARAMETROS = this.GetParams().Replace(string.Format("{0}=", URI_Parametros), Valor.Vazio);
+                string queryPARAMETROS = this.GetParams().Replace(string.Format("&{0}=", URI_Parametros), Valor.Vazio);
 
                 if (Checar.MaiorQue(queryPARAMETROS.Length))
                     parametros = string.Format("{0}={1}&{2}={3}", URI_NEXT_ID, this.ID, URI_NEXT_Parametros, queryPARAMETROS);
@@ -50,6 +52,9 @@ namespace Swarm.Core.Web.FrontController.Common
 
                 Navigation.GoToByKEY(Map.Seguranca.Expired, parametros);
             }
+
+            if (!this.ValidarControledeAcesso())
+                Navigation.ShowMessage("A funcionalidade solicitada não está disponível no momento.");
 
             if (!this.ValidarPermissoes())
                 Navigation.ShowMessage("Você não possui permissão de acesso a esta funcionalidade.");
@@ -118,6 +123,11 @@ namespace Swarm.Core.Web.FrontController.Common
 
             this.Conteudo.RewritePath(this.Conteudo.Request.FilePath, Valor.Vazio, this.GetParams());
             return (Page)PageParser.GetCompiledPageInstance(uri, this.Conteudo.Server.MapPath(uri), this.Conteudo);
+        }
+
+        protected static string GetFileName(HttpContext conteudo)
+        {
+            return Path.GetFileName(conteudo.Request.Path).ToLower();
         }
 
         #endregion

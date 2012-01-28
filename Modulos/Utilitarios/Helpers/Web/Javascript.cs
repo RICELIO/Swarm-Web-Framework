@@ -137,7 +137,7 @@ namespace Swarm.Utilitarios.Helpers.Web
         {
             string strClientID = Checar.IsNull(pagina) ? Guid.NewGuid().ToString() : pagina.ClientID;
             
-            string strWindow = string.Format("window_{0}", strClientID);
+            string strWindow = string.Format("window_{0}", Guid.NewGuid().ToString().Replace(Valor.Traço, Valor.Vazio));
             altura = Checar.MenorouIgual(altura) ? Janela.Altura : altura;
             largura = Checar.MenorouIgual(largura) ? Janela.Largura : largura;
 
@@ -148,48 +148,23 @@ namespace Swarm.Utilitarios.Helpers.Web
                 default:
                 case Janela.Size.Normal:
                     {
-                        script.AppendFormat(@"
-                        altura = {0};
-                        largura = {1};
-
-                        posTOP = (screen.availHeight / 2) - (altura / 2);
-                        posTOP -= (posTOP / 2)
-                        posLEFT	= (screen.availWidth / 2) - (largura / 2);
-
-                        janela = window.open('{2}', '{3}', 'top=' + posTOP + ', left=' + posLEFT + ', width=' + largura + ', height=' + altura + ', scrollbars=1, resizable=1, status=1, menubar=1');
-                        janela.focus();
-                        ", altura, largura, uri, strWindow);
+                        script.AppendFormat("AbrirJanela('{0}','{1}',{2},{3});", uri, strWindow, altura, largura);
                         break;
                     }
                 case Janela.Size.Popup:
                     {
-                        script.AppendFormat(@"
-                        altura = {0};
-                        largura = {1};
-
-                        posTOP = (screen.availHeight / 2) - (altura / 2);
-                        posTOP -= (posTOP / 2)
-                        posLEFT	= (screen.availWidth / 2) - (largura / 2);
-
-                        janela = window.open('{2}', '{3}', 'top=' + posTOP + ', left=' + posLEFT + ', width=' + largura + ', height=' + altura + ', scrollbars=0, resizable=0, status=0, menubar=0');
-                        janela.focus();
-                        ", altura, largura, uri, strWindow);
+                        script.AppendFormat("AbrirJanelaPopup('{0}','{1}',{2},{3});", uri, strWindow, altura, largura);
                         break;
                     }
                 case Janela.Size.TelaCheia:
                     {
-                        script.AppendFormat(@"
-                        janela = window.open('{0}', '{1}', 'scrollbars=1, resizable=1, status=1, menubar=1');
-	                    janela.moveTo(0,0);
-                        janela.resizeTo(screen.availWidth, screen.availHeight);
-                        janela.focus();
-                        ", uri, strWindow);
+                        script.AppendFormat("AbrirJanelaTelaCheia('{0}','{1}');", uri, strWindow);
                         break;
                     }
             }
 
             string strID = string.Format("newWindow_{0}", strClientID);
-            Javascript.Add(pagina, strID, script, Valor.Ativo);
+            if (!apenasLeitura) Javascript.Add(pagina, strID, script, Valor.Ativo);
             
             return script.ToString();
         }

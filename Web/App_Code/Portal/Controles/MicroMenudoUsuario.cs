@@ -64,6 +64,11 @@ namespace Swarm.Web.Code.Portal.Controles
             return SecuritySettings.Ambientes.FirstOrDefault(obj => obj.GUID == UsuarioCorrenteFacade.Environment).Titulo;
         }
 
+        public string GetMeuPerfilURI()
+        {
+            return Navigation.GetURI(Map.Seguranca.MeuPefil);
+        }
+
         public string GetLogoffURI()
         {
             return Navigation.GetURI(Map.Seguranca.Logoff);

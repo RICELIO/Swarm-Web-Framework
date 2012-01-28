@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -12,10 +11,10 @@ namespace Swarm.Core.Web.FrontController
     {
         public static PageFacade Create(HttpContext conteudo)
         {
-            if (UrlMap.Find(Map.FrontController.Default).Url.ToLower().Contains(PageFactory.GetFileName(conteudo)))
+            if (LoginPageFacade.IsDefaultPage(conteudo))
                 return new LoginPageFacade(conteudo);
 
-            if (!UrlMap.Find(Map.FrontController.Controller).Url.ToLower().Contains(PageFactory.GetFileName(conteudo)))
+            if (InvalidPageFacade.IsNotControllerPage(conteudo))
                 return new InvalidPageFacade(conteudo);
 
             int pageID = PageFacade.GetID(conteudo);
@@ -23,13 +22,13 @@ namespace Swarm.Core.Web.FrontController
             if (LoginPageFacade.IsTrue(pageID))
                 return new LoginPageFacade(conteudo);
 
-            if (UrlMap.Find(Map.Seguranca.Logoff).ID == pageID)
+            if (LogoffPageFacade.IsTrue(pageID))
                 return new LogoffPageFacade(conteudo);
 
-            if (UrlMap.Find(Map.Seguranca.Expired).ID == pageID)
+            if (ExpiredPageFacade.IsTrue(pageID))
                 return new ExpiredPageFacade(conteudo);
 
-            if (pageID == UrlMap.Find(Map.FrontController.ShowMessage).ID)
+            if (ShowMessagePageFacade.IsTrue(pageID))
                 return new ShowMessagePageFacade(conteudo);
 
             if (CallBackPageFacade.IsTrue(pageID))
@@ -43,14 +42,5 @@ namespace Swarm.Core.Web.FrontController
 
             return new MappedPageFacade(conteudo);
         }
-
-        #region Métodos Internos
-
-        private static string GetFileName(HttpContext conteudo)
-        {
-            return Path.GetFileName(conteudo.Request.Path).ToLower();
-        }
-
-        #endregion
     }
 }

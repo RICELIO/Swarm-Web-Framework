@@ -16,8 +16,10 @@ namespace Swarm.Persistencia
             Conversoes.ToList<EnumPersistencia.SGBD>(tiposBD).ForEach(tipoBD =>
                 {
                     if (Conexão.Instance.SGBD == tipoBD)
+                    {
                         isEnvolvido = Valor.Ativo;
-                    return;
+                        return;
+                    }
                 });
             return isEnvolvido ? condicao : Valor.Vazio;
         }

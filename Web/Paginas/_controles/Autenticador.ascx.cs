@@ -65,7 +65,7 @@ namespace Swarm.Web.Controles
             {
                 this.ValidarItensControl();
                 base.Autenticar(this.LogindoUsuario, this.SenhadoUsuario);
-                
+
                 if (this.IsSessaoExpirada)
                     Javascript.ReloadPage(this.Page, Janela.Sender.Self, Valor.Inativo);
                 else
@@ -80,22 +80,28 @@ namespace Swarm.Web.Controles
 
         public void Operacao_PrepararItensControl(bool isSessaoExpirada)
         {
+            this.Operacao_PrepararItensControl(isSessaoExpirada, Valor.MenosUm, Valor.Vazio);
+        }
+        public void Operacao_PrepararItensControl(bool isSessaoExpirada, int urlID, string parametros)
+        {
             Controle.SetVisible(!base.UsuarioLogado.Autenticado, this.blocoAutenticacao);
             Controle.SetVisible(base.UsuarioLogado.Autenticado, this.blocoSelecaoAmbiente);
-            if (this.blocoSelecaoAmbiente.Visible) this.ltrSelecaodeAmbiente.Text = new SelecaodeAmbiente().Render();
+            if (this.blocoSelecaoAmbiente.Visible) this.ltrSelecaodeAmbiente.Text = new SelecaodeAmbiente(urlID, parametros).Render();
 
             this.IsSessaoExpirada = isSessaoExpirada;
         }
 
         public void Operacao_DefinirAmbiente(string ambienteEnvolvido)
         {
-            base.DefinirAmbiente(ambienteEnvolvido);
-            Navigation.GoToByKEY(Map.Portal.Home);
+            this.Operacao_DefinirAmbiente(ambienteEnvolvido, Valor.MenosUm, Valor.Vazio);
         }
         public void Operacao_DefinirAmbiente(string ambienteEnvolvido, int urlID, string parametros)
         {
             base.DefinirAmbiente(ambienteEnvolvido);
-            Navigation.GoToByID(urlID, parametros);
+            if (Checar.MenorQue(urlID))
+                Navigation.GoToByKEY(Map.Portal.Home);
+            else
+                Navigation.GoToByID(urlID, parametros);
         }
 
         #endregion

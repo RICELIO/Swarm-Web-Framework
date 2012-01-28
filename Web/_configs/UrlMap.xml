@@ -1,15 +1,18 @@
 <?xml version="1.0"?>
 <UrlMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ItensMapeados>
-    <item id="0" key="Handler" url="./Handler.aspx" titulo=":: Swarm Web Framework ::" ocultar="true" />
-    <item id="1" key="ShowMessage" url="./ShowMessage.aspx" titulo=":: Swarm Web Framework ::" ocultar="true" />
-    <item id="2" key="Default" url="./Default.aspx" titulo=":: Swarm Web Framework ::" ocultar="true" />
+    <ItensMapeados>
+        <item id="0" key="Handler" url="./Handler.aspx" ocultar="true" />
+        <item id="1" key="ShowMessage" url="./ShowMessage.aspx" ocultar="true" />
+        <item id="2" key="Default" url="./Default.aspx" ocultar="true" />
 
-    <item id="3" key="LoginPage" url="./Paginas/Login.aspx" titulo=":: Swarm Web Framework ::" />
-    <item id="4" key="LogoffPage" url="./Paginas/Logoff.aspx" titulo=":: Swarm Web Framework ::" />
-    <item id="5" key="ExpiredPage" url="./Paginas/Expired.aspx" titulo=":: Swarm Web Framework ::" />
-    
-    <item id="6" key="HomePortal" url="./Paginas/Ambientes/Portal/Home.aspx" titulo=":: Swarm Web Framework ::" />
-    <item id="7" key="VisualizarControlesdeAcesso" url="./Paginas/Ambientes/Portal/VisualizarControlesdeAcesso.aspx" titulo=":: Swarm Web Framework ::" />
-  </ItensMapeados>
+        <item id="3" key="LoginPage" url="./Paginas/Login.aspx" ocultar="true" />
+        <item id="4" key="LogoffPage" url="./Paginas/Logoff.aspx" ocultar="true" />
+        <item id="5" key="ExpiredPage" url="./Paginas/Expired.aspx" ocultar="true" />
+
+        <item id="6" key="HomePortal" url="./Paginas/Ambientes/Portal/Home.aspx" ocultar="true" />
+        <item id="7" key="VisualizarControlesdeAcesso" url="./Paginas/Ambientes/Portal/VisualizarControlesdeAcesso.aspx" titulo="" />
+        <item id="8" key="ManutencaoControleAcesso_Selecao" url="./Paginas/Ambientes/Portal/ManutencaoControleAcesso_Selecao.aspx" titulo="Manutenção do Controle de Navegação do Sistema" />
+        <item id="9" key="ManutencaoUsuario_Selecao" url="./Paginas/Ambientes/Portal/Seguranca/ManutencaoUsuario_Selecao.aspx" titulo="Manutenção de Usuários" />
+        <item id="10" key="MeuPerfil" url="./Paginas/Ambientes/Portal/Seguranca/MeuPerfil.aspx" titulo="Informações Pessoais" />
+    </ItensMapeados>
 </UrlMap>

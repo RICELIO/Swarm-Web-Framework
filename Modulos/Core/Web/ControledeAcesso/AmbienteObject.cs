@@ -166,16 +166,15 @@ namespace Swarm.Core.Web.ControledeAcesso
             else
                 this.GetSuperGrupos().ForEach(sg =>
                     {
+                        if (!Checar.IsCampoVazio(guidEnvolvido)) return;
                         sg.GetGrupos().ForEach(g =>
                             {
+                                if (!Checar.IsCampoVazio(guidEnvolvido)) return;
                                 g.GetFuncionalidades().ForEach(f =>
                                     {
+                                        if (!Checar.IsCampoVazio(guidEnvolvido)) return;
                                         bool paginaEnvolvida = !Checar.IsNull(f.GetItens().Find(obj => obj.UrlMapID == pageID));
-                                        if (paginaEnvolvida)
-                                        {
-                                            guidEnvolvido = f.GUID;
-                                            return;
-                                        }
+                                        if (paginaEnvolvida) guidEnvolvido = f.GUID;
                                     });
                             });
                     });

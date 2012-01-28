@@ -10,13 +10,6 @@ using Swarm.Core.Web.FrontController.Common;
 
 public class Handler : IHttpHandler, IRequiresSessionState
 {
-    #region Constantes
-
-    private const string PARAMETROS = "Handler_Orig_Params";
-    private const string PARAMETROS_ADICIONAIS = "Handler_Orig_AdditionalParams";
-
-    #endregion
-
     #region IHttpHandler Members
 
     public bool IsReusable
@@ -26,16 +19,16 @@ public class Handler : IHttpHandler, IRequiresSessionState
 
     public void ProcessRequest(HttpContext context)
     {
-        context.Items[PARAMETROS] = context.Request.QueryString.ToString();
-        context.Items[PARAMETROS_ADICIONAIS] = context.Request.PathInfo;
+        context.Items[PageFacade.HANDLER_PARAMETROS] = context.Request.QueryString.ToString();
+        context.Items[PageFacade.HANDLER_PARAMETROS_ADICIONAIS] = context.Request.PathInfo;
 
         //try
         //{
-            PageFacade objPAGE = PageFactory.Create(context);
-            Page page = objPAGE.GetPageRequested();
+        PageFacade objPAGE = PageFactory.Create(context);
+        Page page = objPAGE.GetPageRequested();
 
-            page.PreRender += new EventHandler(PreRenderCompleted);
-            page.ProcessRequest(context);
+        page.PreRender += new EventHandler(PreRenderCompleted);
+        page.ProcessRequest(context);
         //}
         //catch (Exception erro) { Navigation.ShowMessage(erro.Message); }
     }
@@ -46,7 +39,7 @@ public class Handler : IHttpHandler, IRequiresSessionState
 
     private void PreRenderCompleted(object sender, EventArgs e)
     {
-        HttpContext.Current.RewritePath(HttpContext.Current.Request.Path, HttpContext.Current.Items[PARAMETROS_ADICIONAIS].ToString(), HttpContext.Current.Items[PARAMETROS].ToString());
+        HttpContext.Current.RewritePath(HttpContext.Current.Request.Path, HttpContext.Current.Items[PageFacade.HANDLER_PARAMETROS_ADICIONAIS].ToString(), HttpContext.Current.Items[PageFacade.HANDLER_PARAMETROS].ToString());
     }
 
     #endregion

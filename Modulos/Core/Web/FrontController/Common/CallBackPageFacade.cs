@@ -38,12 +38,14 @@ namespace Swarm.Core.Web.FrontController.Common
                 Ambiente objAmbienteCallBack = SecuritySettings.Find(EnumAcesso.CodigoInterno_Ambiente.CallBack);
                 objAmbienteCallBack.GetSuperGrupos().ForEach(sg =>
                 {
+                    if (isCallBackPage) return;
                     sg.GetGrupos().ForEach(g =>
                     {
+                        if (isCallBackPage) return;
                         g.GetFuncionalidades().ForEach(f =>
                         {
-                            isCallBackPage = !Checar.IsNull(f.GetItens().Find(obj => obj.UrlMapID == pageID));
                             if (isCallBackPage) return;
+                            isCallBackPage = !Checar.IsNull(f.GetItens().Find(obj => obj.UrlMapID == pageID));
                         });
                     });
                 });

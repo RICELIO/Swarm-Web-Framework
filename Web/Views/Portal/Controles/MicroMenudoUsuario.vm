@@ -44,7 +44,7 @@
                                 #if($this.IsPossuiAmbienteDefinido)
                                 #set($espacamentoInicialEsquerda = "")
                                 <div class="Bloco_LadoaLado" style="margin-right: 15px; padding-left: 3px;">
-                                    <img class="Vertical_FundoConteudo" src="./_content/Images/Icones/p_perfil.png" alt="" />&nbsp;Perfil
+                                    <img class="Vertical_FundoConteudo" src="./_content/Images/Icones/p_perfil.png" alt="" />&nbsp;<a href="$this.GetMeuPerfilURI">Perfil</a>
                                 </div>
                                 <div class="Bloco_LadoaLado" style="margin-right: 15px;">
                                     <img class="Vertical_FundoConteudo" src="./_content/Images/Icones/p_ambiente.png" alt="" />&nbsp;$this.GetEnvironment

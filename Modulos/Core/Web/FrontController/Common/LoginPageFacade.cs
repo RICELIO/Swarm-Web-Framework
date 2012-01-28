@@ -29,6 +29,13 @@ namespace Swarm.Core.Web.FrontController.Common
             return UrlMap.Find(Map.Seguranca.Login).Url;
         }
 
+        #region Métodos Externos
+
+        public static bool IsDefaultPage(HttpContext conteudo)
+        {
+            return UrlMap.Find(Map.FrontController.Default).Url.ToLower().Contains(PageFacade.GetFileName(conteudo));
+        }
+
         public static bool IsTrue(int pageID)
         {
             if (UrlMap.Find(Map.FrontController.Default).ID == pageID)
@@ -39,5 +46,7 @@ namespace Swarm.Core.Web.FrontController.Common
 
             return Valor.Inativo;
         }
+
+        #endregion
     }
 }

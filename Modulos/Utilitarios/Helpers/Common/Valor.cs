@@ -45,6 +45,7 @@ namespace Swarm.Utilitarios
         public const string BarraInvertida = @"\";
         public const string BarraReta = "|";
         public const string Sublinhado = "_";
+        public const string Tralha = "#";
 
         public static readonly DateTime DataInvalida = DateTime.MinValue;
         public static readonly string Default = Valor.Zero.ToString();

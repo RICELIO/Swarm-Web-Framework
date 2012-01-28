@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Swarm.Core.Web;
 using Swarm.Core.Web.Configuracao;
+using Swarm.Core.Web.FrontController.Common;
 using Swarm.Web.Code.Portal.Controles;
 using Swarm.Utilitarios;
 
@@ -17,7 +18,7 @@ namespace Swarm.Web
 
         public string AmbienteSelecionado
         {
-            get { return base.GetParametro("AmbienteToken"); }
+            get { return base.GetParametro(PageFacade.URI_Ambiente_TOKEN); }
         }
 
         #endregion

@@ -72,6 +72,9 @@ namespace Swarm.Tests.Core.Web.FrontController.Common
             AcessoController.Manter(this.Mapeamento, "usuario.testes", null);
 
             this.Permissao = PermissaoController.Create();
+
+            try { UsuarioCorrenteFacade.Desconectar(); }
+            catch { /* Prevenção */ }
         }
 
         [Test]
@@ -86,9 +89,8 @@ namespace Swarm.Tests.Core.Web.FrontController.Common
 
             // APESAR DE AUTENTICADO É NECESSÁRIO INFORMAR O ENVIRONMENT ENVOLVIDO
             UsuarioCorrenteFacade.Autenticar("usuario.teste", "testes");
-            Assert.IsFalse(this.ValidarControledeAcessoStub(), "O Environment foi informando quando não deveria está preenchido.");
-            Assert.IsFalse(this.ValidarAutenticacaoStub(), "O Environment foi informando quando não deveria está preenchido.");
-            Assert.IsFalse(this.ValidarPermissoesStub(), "O Environment foi informando quando não deveria está preenchido.");
+            Assert.IsFalse(this.ValidarAutenticacaoStub(), "O Environment foi informado quando não deveria está preenchido.");
+            Assert.IsFalse(this.ValidarPermissoesStub(), "O Environment foi informado quando não deveria está preenchido.");
             UsuarioCorrenteFacade.Environment = this.Ambiente.GUID;
 
             // UMA VEZ AUTENTICADO, SETADO O ENVIRONMENT E DEFINIDO A FUNCIONALIDADE ENVOLVIDA COMO ATIVA DEVE APROVAR DUAS DAS TRÊS CHECAGENS,
@@ -104,9 +106,6 @@ namespace Swarm.Tests.Core.Web.FrontController.Common
             this.Permissao.GUID = this.Funcionalidade.GUID;
             PermissaoController.Manter(this.Permissao, "usuario.teste", null);
             Assert.IsTrue(this.ValidarPermissoesStub(), "O usuário deveria possui permissão de acesso a PÁGINA MAPEADA.");
-
-            try { UsuarioCorrenteFacade.Desconectar(); }
-            catch { /* Prevenção */ }
         }
 
         [TestFixtureTearDown]
@@ -154,8 +153,10 @@ namespace Swarm.Tests.Core.Web.FrontController.Common
                 Ambiente objAmbiente = SecuritySettings.Ambientes.Find(obj => obj.GUID == UsuarioCorrenteFacade.Environment);
                 objAmbiente.GetSuperGrupos().ForEach(sg =>
                 {
+                    if (paginaDisponivel) return;
                     sg.GetGrupos().ForEach(g =>
                     {
+                        if (paginaDisponivel) return;
                         g.GetFuncionalidades().ForEach(f =>
                         {
                             bool paginaLocalizada = !Checar.IsNull(f.GetItens().Find(obj => obj.UrlMapID == PAGINA_ID));

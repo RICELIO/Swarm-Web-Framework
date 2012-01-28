@@ -27,7 +27,11 @@ namespace Swarm.Utilitarios.Library.Seguranca.Criptografia
 
         public override string Descriptografar(string texto)
         {
-            return base.Descriptografar(texto.Replace(PREVENCAO_MAIS, "+"));
+            try
+            {
+                return base.Descriptografar(texto.Replace(PREVENCAO_MAIS, "+"));
+            }
+            catch { return Valor.Vazio; }
         }
 
         #endregion

@@ -1,0 +1,70 @@
+﻿@media screen, print
+{
+    *
+    {
+        margin: 0px;
+    }
+    
+    * html
+    {
+        height: 100%;
+    }
+
+    html, body
+    {
+        background-color: White;
+        height: 100%;
+    }
+
+    form
+    {
+        min-height: 99.5%;
+        position: relative;
+    }
+    
+    #Pagina_Cabecalho
+    {
+        background-image: url(../../../App_Themes/Default/Images/topo_fundo.jpg);
+        background-repeat: repeat-x;
+        height: 80px;
+    }
+    
+    #Pagina_BarradeMenu
+    {
+        /*background-color: #E8E8E8;*/
+        background-color: #F1F1F1;
+        height: 25px;
+    }
+
+    #Pagina_Conteudo
+    {
+        padding: 30px 10px 50px 10px;
+    }
+
+    #Pagina_Rodape
+    {
+        background-image: url(../../../App_Themes/Default/Images/rodape_fundo.jpg);
+        background-repeat: repeat-x;
+        height: 25px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        padding-top: 10px;
+    }
+    
+    #Pagina_BlocoInformacoesUsuario
+    {
+        background-image: url(../../../App_Themes/Default/Images/topo_b_fundo.jpg);
+        background-repeat: repeat-x;
+    }
+    #Pagina_BlocoInformacoesUsuario #Fundo_Esquerda
+    {
+        background-image: url(../../../App_Themes/Default/Images/topo_b_esq.jpg);
+        width: 3px;
+    }
+    #Pagina_BlocoInformacoesUsuario #Fundo_Direita
+    {
+        background-image: url(../../../App_Themes/Default/Images/topo_b_dir.jpg);
+        width: 3px;
+    }
+}

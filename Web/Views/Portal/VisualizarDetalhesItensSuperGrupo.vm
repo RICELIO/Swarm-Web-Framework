@@ -1,0 +1,47 @@
+﻿<div class="Horizontal_Esquerda" style="padding-left: 20px; padding-right: 20px;">
+    <div>
+        <table class="Dimensao_LarguraPadrao">
+            <tbody>
+                <tr>
+                    <td style="width: 36px;">
+                        <img class="Vertical_Centro" src="./_content/Images/Icones/m_app.png" alt="" />
+                    </td>
+                    <td style="padding-left: 10px;">
+                        <h1 class="Vertical_Centro">$this.GetTitulo</h1>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-top: 35px; padding-left: 40px; padding-right: 40px;">
+    #foreach($grupo in $this.GetGrupos)
+    #afterall
+        <div class="Bloco_LadoaLado_Fechar">
+        </div>
+    #each
+        <div class="Bloco_LadoaLado" style="margin-right: 40px; margin-bottom: 20px; width: 172px;
+            min-height: 161px; border-top: dotted 1px #333333; border-right: dotted 1px #333333;
+            padding-left: 10px;">
+            <table class="Dimensao_LarguraPadrao">
+                <tbody>
+                    <tr style="min-height: 40px;">
+                        <td style="width: 19px;">
+                            <img class="Vertical_Centro" src="./_content/Images/Icones/m_indicador.png" alt="" />
+                        </td>
+                        <td style="padding-left: 10px;">
+                            <a href="$this.GetURI($grupo.ID,$grupo.TipodeAcesso)"><h1 class="Vertical_Centro">$grupo.Titulo</h1></a>
+                        </td>
+                    </tr>
+                    #foreach($funcionalidade in $this.GetFuncionalidades($grupo.ID))
+                    <tr>
+                        <td colspan="2" class="Vertical_Centro" style="padding-left: 10px; padding-right: 10px;">
+                            <img src="./_content/Images/Icones/p_indicador2.png" alt="" />&nbsp;<a href="$this.GetURI($funcionalidade.ID,$funcionalidade.TipodeAcesso)">$funcionalidade.Titulo</a>
+                        </td>
+                    </tr>
+                    #end
+                </tbody>
+            </table>
+        </div>
+    #end
+    </div>
+</div>
