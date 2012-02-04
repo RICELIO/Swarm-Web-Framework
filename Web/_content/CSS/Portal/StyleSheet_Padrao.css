@@ -43,6 +43,10 @@
     {
         width: 100%;
     }
+    .Dimensao_LarguraPadrao tr
+    {
+        height: 28px;
+    }
 
     .Texto_10px
     {
@@ -119,10 +123,20 @@
         font-weight: bold;
         min-width: 80px;
     }
+    
+    .Formulario_Upload
+    {
+        height: 20px;
+        border: outset 1px #333333;
+        background-color: #F5F5F5;
+        font-size: 11px;
+        vertical-align: middle;
+    }
 
     table .Tabela_Descricao
     {
         width: 30%;
+        height: 25px;
         text-align: right;
         padding-right: 10px;
         font-weight: bold;
@@ -130,6 +144,7 @@
     table .Tabela_Descricao_Obrigatorio
     {
         width: 30%;
+        height: 25px;
         background-image: url(../../Images/Icones/p_obrigatorio.png);
         background-position: right 5px center;
         background-repeat: no-repeat;
@@ -140,19 +155,28 @@
     table .Tabela_Conteudo
     {
         width: 70%;
+        height: 25px;
         text-align: left;
     }
     table .Tabela_Informacao
     {
-        height: 40px;
+        height: 25px;
     }
     table .Tabela_Informacao_Obrigatorio
     {
-        height: 40px;
+        height: 25px;
         background-image: url(../../Images/Icones/p_obrigatorio.png);
         background-position: 5px center;
         background-repeat: no-repeat;
         padding-left: 25px;
         font-style: italic;
+    }
+    table .Tabela_Informacao_Alerta
+    {
+        height: 25px;
+        background-image: url(../../Images/Icones/p_atencao.png);
+        background-position: 5px center;
+        background-repeat: no-repeat;
+        padding-left: 25px;
     }
 }

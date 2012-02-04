@@ -51,7 +51,8 @@ namespace Swarm.Web.Code.Portal.Controles
 
         public string GetAvatardoUsuarioURI()
         {
-            return UsuarioCorrenteFacade.Instance.GetFullPathAvatar();
+            string parametrosAvatar = string.Format("Imagem={0}&Largura=50&Altura=56", UsuarioCorrenteFacade.Instance.GetAvatar(Diretorio.Tipo.Web));
+            return Navigation.GetURI(Map.Callback.ObterImagemThumbnail, parametrosAvatar);
         }
 
         public string GetNomedoUsuario()

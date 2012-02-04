@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\Seguranca\Autenticacao\Excessões\AlterarSenhaDadosIncompletosException.cs" />
+    <Compile Include="Library\Seguranca\Autenticacao\Excessões\MesmaSenhaException.cs" />
     <Compile Include="Library\Seguranca\Autenticacao\UsuarioController.cs" />
     <Compile Include="Library\Seguranca\Autenticacao\UsuarioObject.cs" />
     <Compile Include="Library\Seguranca\Autenticacao\Excessões\SenhaInvalidaException.cs" />
@@ -56,6 +57,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Web\ControledeAcesso\AcessoMapForm.cs" />
+    <Compile Include="Web\FrontController\Mapeamento\CallBackMap.cs" />
     <Compile Include="Web\UsuarioCorrenteFacade.cs" />
     <Compile Include="Library\Seguranca\Autenticacao\UsuarioCorrenteSingleton.cs" />
     <Compile Include="Library\Seguranca\Autenticacao\Excessões\UsuarioDesabilitadoException.cs" />

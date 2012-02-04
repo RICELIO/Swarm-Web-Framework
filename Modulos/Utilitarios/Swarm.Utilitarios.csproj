@@ -37,10 +37,24 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Common\Diretorio.cs" />
+    <Compile Include="Helpers\Web\Upload\Excessões\AcessoNaoAutorizadoException.cs" />
+    <Compile Include="Helpers\Web\Upload\Excessões\ArquivoInvalidoException.cs" />
+    <Compile Include="Helpers\Web\Upload\Excessões\ExtensaoInvalidaException.cs" />
+    <Compile Include="Helpers\Web\Upload\Excessões\DimensaoInvalidaException.cs" />
+    <Compile Include="Helpers\Web\Upload\Excessões\NomeArquivoInvalidoException.cs" />
+    <Compile Include="Helpers\Web\Upload\Excessões\TamanhoInvalidoException.cs" />
+    <Compile Include="Helpers\Web\Upload\Common\UploadTXT.cs" />
+    <Compile Include="Helpers\Web\Upload\Common\UploadVM.cs" />
+    <Compile Include="Helpers\Web\Upload\Common\UploadXML.cs" />
+    <Compile Include="Helpers\Web\Upload\UploadBase.cs" />
+    <Compile Include="Helpers\Web\Upload\Common\UploadImagem.cs" />
+    <Compile Include="Helpers\Web\Upload\_Alertas.cs" />
     <Compile Include="Library\Seguranca\Criptografia\Criptografia.cs" />
     <Compile Include="Library\Seguranca\Criptografia\CriptografiaDES3.cs" />
     <Compile Include="Library\Seguranca\Criptografia\CriptografiaMD5.cs" />

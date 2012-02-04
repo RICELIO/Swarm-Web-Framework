@@ -11,5 +11,6 @@ namespace Swarm.Core.Web.FrontController
         public static FrontControllerMap FrontController = new FrontControllerMap();
         public static SegurancaMap Seguranca = new SegurancaMap();
         public static PortalMap Portal = new PortalMap();
+        public static CallBackMap Callback = new CallBackMap();
     }
 }

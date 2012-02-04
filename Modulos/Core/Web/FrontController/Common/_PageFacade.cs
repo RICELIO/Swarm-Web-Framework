@@ -104,7 +104,7 @@ namespace Swarm.Core.Web.FrontController.Common
 
             foreach (string chave in this.Conteudo.Request.QueryString.Keys)
             {
-                if (chave == URI_ID) continue;
+                if (chave == URI_ID || Checar.IsCampoVazio(chave)) continue;
 
                 if (Checar.MaiorQue(++qtdParametros, Valor.Um))
                     parametros += "&";

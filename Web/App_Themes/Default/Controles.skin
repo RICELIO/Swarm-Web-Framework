@@ -16,3 +16,4 @@ Default skin template. The following skins are provided as examples only.
 <asp:TextBox runat="server" CssClass="Formulario_CampoTexto" />
 <asp:CheckBox runat="server" CssClass="Formulario_CaixaSelecao" />
 <asp:Button runat="server" CssClass="Formulario_Botao" />
+<asp:FileUpload runat="server" CssClass="Formulario_Upload" />

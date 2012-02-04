@@ -26,6 +26,11 @@ namespace Swarm.Utilitarios
         public const int Trinta = 30;
         public const int Cinquenta = 50;
         public const int Cem = 100;
+        
+        /// <summary>
+        /// Tamanho equivalente há um arquivo de 1 megabyte.
+        /// </summary>
+        public const int Mega_1 = 1024;
 
         public const Int32 EnumDefault = Int32.MinValue;
         public const object Nulo = null;

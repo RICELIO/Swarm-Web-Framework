@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace Swarm.Core.Library.Seguranca.Autenticacao
 {

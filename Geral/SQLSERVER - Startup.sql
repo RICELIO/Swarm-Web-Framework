@@ -129,6 +129,12 @@ END
 GO
 
 DECLARE @IdAcessoAmbiente [bigint];
+SET @IdAcessoAmbiente = (SELECT TOP 1 IdAcessoAmbiente FROM AcessoAmbiente WHERE GUID = '9714073c-3e5c-44ab-a056-c988167d4d89');
+INSERT INTO AcessoSuperGrupo VALUES ('3870a3f5-3281-44eb-8656-60b0a1e95d54','Super-Grupo - CallBack',1,0,@IdAcessoAmbiente,1,'administrador',GETDATE(),null)
+
+GO
+
+DECLARE @IdAcessoAmbiente [bigint];
 SET @IdAcessoAmbiente = (SELECT TOP 1 IdAcessoAmbiente FROM AcessoAmbiente WHERE GUID = '1febb761-7e5c-4e8b-8916-f0db37724289');
 INSERT INTO AcessoSuperGrupo VALUES ('5dc0f243-7aa7-42c6-b4d1-cbb19c06f1f0','Super-Grupo de páginas que não serão exibidas para o Usuário',1,0,@IdAcessoAmbiente,1,'administrador',GETDATE(),null)
 INSERT INTO AcessoSuperGrupo VALUES ('10a15003-7cd0-4bb6-b093-b2565a75d901','Administrativo',1,1,@IdAcessoAmbiente,NULL,'administrador',GETDATE(),NULL)
@@ -155,6 +161,12 @@ BEGIN
         CREATE INDEX IX_AcessoGrupo_IdAcessoGrupo ON [AcessoGrupo](IdAcessoGrupo) ON [PRIMARY]
     COMMIT
 END
+
+GO
+
+DECLARE @IdAcessoSuperGrupo [bigint];
+SET @IdAcessoSuperGrupo = (SELECT TOP 1 IdAcessoSuperGrupo FROM AcessoSuperGrupo WHERE GUID = '3870a3f5-3281-44eb-8656-60b0a1e95d54');
+INSERT INTO AcessoGrupo VALUES ('7700d27b-6c84-48a7-b8a3-bd95cb827780','Grupo - CallBack',1,0,@IdAcessoSuperGrupo,1,'administrador',GETDATE(),null)
 
 GO
 
@@ -195,6 +207,12 @@ END
 GO
 
 DECLARE @IdAcessoGrupo [bigint];
+SET @IdAcessoGrupo = (SELECT TOP 1 IdAcessoGrupo FROM AcessoGrupo WHERE GUID = '7700d27b-6c84-48a7-b8a3-bd95cb827780');
+INSERT INTO AcessoFuncionalidade VALUES ('e79d992d-999d-455c-a2d2-a2467ed79c09','Obter Imagem em Thumbnail','Funcionalidade voltada para renderizar qualquer tipo de imagem no sistema.',1,0,@IdAcessoGrupo,'administrador',GETDATE(),null)
+
+GO
+
+DECLARE @IdAcessoGrupo [bigint];
 SET @IdAcessoGrupo = (SELECT TOP 1 IdAcessoGrupo FROM AcessoGrupo WHERE GUID = 'e34690cc-0fda-426b-82b6-97602f7e14b3');
 INSERT INTO AcessoFuncionalidade VALUES ('ea0bd008-9b63-4c67-83ec-f321c4da28f8','Seleção de Funcionalidade','Esta página é responsável pela gestão dos itens a serem exibidos para o usuário selecionar.',1,0,@IdAcessoGrupo,'administrador',GETDATE(),null)
 INSERT INTO AcessoFuncionalidade VALUES ('cd8415a8-3853-42f0-a375-983a5f45f795','Perfil','Esta página é responsável pela manutenção do perfil de acesso do usuário logado.',1,0,@IdAcessoGrupo,'administrador',GETDATE(),null)
@@ -230,6 +248,12 @@ BEGIN
         CREATE INDEX IX_AcessoMap_IdAcessoMap ON [AcessoMap](IdAcessoMap) ON [PRIMARY]
     COMMIT
 END
+
+GO
+
+DECLARE @IdAcessoFuncionalidade [bigint];
+SET @IdAcessoFuncionalidade = (SELECT TOP 1 IdAcessoFuncionalidade FROM AcessoFuncionalidade WHERE GUID = 'e79d992d-999d-455c-a2d2-a2467ed79c09');
+INSERT INTO AcessoMap VALUES (4,@IdAcessoFuncionalidade,100,1,'administrador',GETDATE(),null)
 
 GO
 

@@ -9,6 +9,8 @@
         <item id="4" key="LogoffPage" url="./Paginas/Logoff.aspx" ocultar="true" />
         <item id="5" key="ExpiredPage" url="./Paginas/Expired.aspx" ocultar="true" />
 
+        <item id="100" key="ObterImagemThumbnail" url="./Paginas/Ambientes/CallBack/ObterImagemThumbnail.aspx" ocultar="true" />
+
         <item id="6" key="HomePortal" url="./Paginas/Ambientes/Portal/Home.aspx" ocultar="true" />
         <item id="7" key="VisualizarControlesdeAcesso" url="./Paginas/Ambientes/Portal/VisualizarControlesdeAcesso.aspx" titulo="" />
         <item id="8" key="ManutencaoControleAcesso_Selecao" url="./Paginas/Ambientes/Portal/ManutencaoControleAcesso_Selecao.aspx" titulo="Manutenção do Controle de Navegação do Sistema" />

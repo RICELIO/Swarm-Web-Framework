@@ -25,6 +25,10 @@ namespace Swarm.Core.Library.Seguranca.Autenticacao
             return new Usuario();
         }
 
+        public static Usuario Get(long id)
+        {
+            return new Usuario(id);
+        }
         public static Usuario Get(string login)
         {
             Usuario obj = UsuarioController.Create();
@@ -49,7 +53,7 @@ namespace Swarm.Core.Library.Seguranca.Autenticacao
         public static LeitorFacade GetAll()
         {
             Usuario obj = UsuarioController.Create();
-            
+
             StringBuilder sql = new StringBuilder();
             sql.AppendFormat(@"
             SELECT DISTINCT *
@@ -99,41 +103,66 @@ namespace Swarm.Core.Library.Seguranca.Autenticacao
 
         public static void AtualizarSenha(long id, string senhaAtual, string novaSenha, ColecaoPersistencia colecao)
         {
-            ColecaoPersistencia colecaoPersistencia = Checar.IsNull(colecao) ? new ColecaoPersistencia() : colecao;
+            Usuario obj = UsuarioController.Get(id);
+            UsuarioController.AtualizarSenha(obj, senhaAtual, novaSenha, colecao);
+        }
+        public static void AtualizarSenha(Usuario obj, string senhaAtual, string novaSenha, ColecaoPersistencia colecao)
+        {
+            string senhaAnterior = obj.Senha; // PREVENÇÃO
 
-            if (Checar.IsCampoVazio(senhaAtual) || !Checar.IsCampoVazio(novaSenha))
-                throw new AlterarSenhaDadosIncompletosException();
-
-            Criptografia objCriptografia = UsuarioController.GetModelodeCriptografia();
-            string senhaAtualCriptografada = objCriptografia.Criptografar(senhaAtual);
-
-            Usuario objUsuario = new Usuario(id);
-            if (senhaAtualCriptografada.Equals(objUsuario.Senha))
+            try
             {
-                novaSenha = objCriptografia.Criptografar(novaSenha);
-                objUsuario.Senha = novaSenha;
-                colecao.AdicionarItem(objUsuario, EnumPersistencia.Operacao.Alterar);
-            }
-            else
-                throw new SenhaInvalidaException();
+                ColecaoPersistencia colecaoPersistencia = Checar.IsNull(colecao) ? new ColecaoPersistencia() : colecao;
 
-            if (!Checar.IsNull(colecao)) return;
-            colecaoPersistencia.Persistir();
+                if (Checar.IsCampoVazio(senhaAtual) || Checar.IsCampoVazio(novaSenha))
+                    throw new AlterarSenhaDadosIncompletosException();
+
+                Criptografia objCriptografia = UsuarioController.GetModelodeCriptografia();
+                string senhaAtualCriptografada = objCriptografia.Criptografar(senhaAtual);
+
+                if (senhaAtualCriptografada.Equals(obj.Senha))
+                {
+                    novaSenha = objCriptografia.Criptografar(novaSenha);
+                    if (novaSenha == obj.Senha) throw new MesmaSenhaException();
+
+                    obj.Senha = novaSenha;
+                    colecaoPersistencia.AdicionarItem(obj, EnumPersistencia.Operacao.Alterar);
+                }
+                else
+                    throw new SenhaInvalidaException();
+
+                if (!Checar.IsNull(colecao)) return;
+                colecaoPersistencia.Persistir();
+            }
+            catch(Exception erro)
+            {
+                obj.Senha = senhaAnterior;
+                throw erro;
+            }
         }
 
-        public static void AtualizarAvatar(long id, string avatar, ColecaoPersistencia colecao)
+        public static bool AtualizarAvatar(long id, string nomedoArquivoComExtensao, ColecaoPersistencia colecao)
         {
-            ColecaoPersistencia colecaoPersistencia = Checar.IsNull(colecao) ? new ColecaoPersistencia() : colecao;
+            Usuario obj = UsuarioController.Get(id);
+            return UsuarioController.AtualizarAvatar(obj, nomedoArquivoComExtensao, colecao);
+        }
+        public static bool AtualizarAvatar(Usuario obj, string nomedoArquivoComExtensao, ColecaoPersistencia colecao)
+        {
+            try
+            {
+                ColecaoPersistencia colecaoPersistencia = Checar.IsNull(colecao) ? new ColecaoPersistencia() : colecao;
+                
+                if (Checar.IsCampoVazio(nomedoArquivoComExtensao))
+                    throw new Exception(Erros.ValorInvalido("Usuário", "Avatar / Foto"));
 
-            if (Checar.IsCampoVazio(avatar))
-                throw new Exception(Erros.ValorInvalido("Usuário", "Avatar / Foto"));
+                obj.Avatar = nomedoArquivoComExtensao;
+                colecaoPersistencia.AdicionarItem(obj, EnumPersistencia.Operacao.Alterar);
 
-            Usuario objUsuario = new Usuario(id);
-            objUsuario.Avatar = avatar;
-            colecao.AdicionarItem(objUsuario, EnumPersistencia.Operacao.Alterar);
-
-            if (!Checar.IsNull(colecao)) return;
-            colecaoPersistencia.Persistir();
+                if (!Checar.IsNull(colecao)) return Valor.Ativo;
+                colecaoPersistencia.Persistir();
+                return Valor.Ativo;
+            }
+            catch { return Valor.Inativo; }
         }
 
         #endregion

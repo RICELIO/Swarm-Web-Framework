@@ -15,6 +15,11 @@
         background-color: White;
         height: 100%;
     }
+    
+    body
+    {
+        overflow-y: scroll;
+    }
 
     form
     {
@@ -27,6 +32,7 @@
         background-image: url(../../../App_Themes/Default/Images/topo_fundo.jpg);
         background-repeat: repeat-x;
         height: 80px;
+        width: 100%;
     }
     
     #Pagina_BarradeMenu

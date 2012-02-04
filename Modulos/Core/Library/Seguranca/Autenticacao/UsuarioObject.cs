@@ -62,27 +62,37 @@ namespace Swarm.Core.Library.Seguranca.Autenticacao
                 else
                     this.Autenticado = true;
             }
-            catch(Exception erro)
+            catch (Exception erro)
             {
                 this.Autenticado = false;
                 throw erro;
             }
         }
 
-        public string GetFullPathAvatar()
+        public string GetDescricaodoNiveldeAcesso()
         {
-            if (String.IsNullOrEmpty(this.Avatar))
-                return Configuracoes.Avatar_Padrao;
+            switch (this.Tipo)
+            {
+                case EnumAutenticacao.TipodeUsuario.Administrador:
+                    return "Administrador";
+                case EnumAutenticacao.TipodeUsuario.Usuario:
+                    return "Usuário";
+                case EnumAutenticacao.TipodeUsuario.Indefinido:
+                default:
+                    return Valor.Traço;
+            }
+        }
+
+        public string GetAvatar(Diretorio.Tipo enumTipoDir)
+        {
+            string strDIR = enumTipoDir == Diretorio.Tipo.Web ? Configuracoes.Avatar_WebPath : Configuracoes.Avatar_FilePath;
+            if (String.IsNullOrEmpty(this.Avatar)) return string.Concat(strDIR, Configuracoes.Avatar_Padrao);
 
             // Verificando se o arquivo existe fisicamente
-            string fullPathAvatar = String.Concat(Configuracoes.Avatar_Path, this.Avatar);
-            if (File.Exists(fullPathAvatar))
-            {
-                string webPathAvatar = String.Concat(Configuracoes.Avatar_WebPath, this.Avatar);
-                return webPathAvatar;
-            }
-            else
-                return Configuracoes.Avatar_Padrao;
+            string fullPathAvatar = String.Concat(Configuracoes.Avatar_FilePath, this.Avatar);
+            string strArquivo = File.Exists(fullPathAvatar) ? this.Avatar : Configuracoes.Avatar_Padrao;
+
+            return string.Concat(strDIR, strArquivo);
         }
 
         #endregion
@@ -109,7 +119,7 @@ namespace Swarm.Core.Library.Seguranca.Autenticacao
         {
             if (this.Tipo == EnumAutenticacao.TipodeUsuario.Indefinido)
                 throw new Exception(Erros.ValorInvalido("Usuário", "Tipo de Usuário"));
-            
+
             if (Checar.IsCampoVazio(this.Login))
                 throw new Exception(Erros.ValorInvalido("Usuário", "Login"));
 
@@ -151,7 +161,7 @@ namespace Swarm.Core.Library.Seguranca.Autenticacao
                 this.Habilitado = Conversoes.ToBoolean(leitor.GetValor("Habilitado"));
                 this.Bloqueado = Conversoes.ToBoolean(leitor.GetValor("Bloqueado"));
                 this.TrocarSenha = Conversoes.ToBoolean(leitor.GetValor("TrocarSenha"));
-                
+
                 this.Materializado = Valor.Ativo;
             }
             leitor.Fechar();
